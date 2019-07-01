@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-12">
-                <h3>Selamat Datang di Sistem Informasi Penerimaan Siswa Baru SMK</h3>
+                <h3>Selamat Datang di Sistem Informasi Penerimaan Mahasiswa Baru</h3>
                 <hr>
                 <h1>Pendaftaran Online</h1>
                 <br><br>
