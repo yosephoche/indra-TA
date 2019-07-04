@@ -47,7 +47,7 @@
           <h4 class="timeline-title">3. Konfirmasi Pembayaran</h4>
         </div>
         <div class="timeline-body">
-          <p>Setelah Calon Siswa melakukan Transfer Pembayaran, selanjutnya Calon Siswa diharapkan melakukan Konfirmasi Pembayaran dan kemudian menunggu Verifikasi Pembayaran dari Panitia. Biasanya pada langkah ini membutuhkan waktu paling lambat 2x24 jam karena Verifikasi Pembayaran masih dilakukan secara Manual.</p>
+          <p>Setelah Calon Mahasiswa melakukan Transfer Pembayaran, selanjutnya Calon Mahasiswa diharapkan melakukan Konfirmasi Pembayaran dan kemudian menunggu Verifikasi Pembayaran dari Panitia. Biasanya pada langkah ini membutuhkan waktu paling lambat 2x24 jam karena Verifikasi Pembayaran masih dilakukan secara Manual.</p>
           <hr>
           <a href="{{ route('konfirmasiPembayaranSiswa') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman.</a>
         </div>
@@ -62,7 +62,7 @@
           <h4 class="timeline-title">4. Tes Seleksi Akademik</h4>
         </div>
         <div class="timeline-body">
-          <p>Calon Siswa melakukan Tes Seleksi Akademik dengan cara datang langsung ke sekolahan sesuai dengan Jadwal Tes yang sudah ditentukan. Tes Seleksi dimulai pukul 10.00 - selesai, agar memperlancar jalannya Tes Seleksi ini Calon Siswa diharapkan datang 1 jam lebih awal sebelum Tes Seleksi dimulai. Tes Seleksi ini hanya dilakukan 1x</p>
+          <p>Calon Siswa melakukan Tes Seleksi Akademik dengan cara datang langsung ke Kampus sesuai dengan Jadwal Tes yang sudah ditentukan. Tes Seleksi dimulai pukul 10.00 - selesai, agar memperlancar jalannya Tes Seleksi ini Calon Siswa diharapkan datang 1 jam lebih awal sebelum Tes Seleksi dimulai. Tes Seleksi ini hanya dilakukan 1x</p>
         </div>
       </div>
     </li>
@@ -75,11 +75,9 @@
           <h4 class="timeline-title">5. Melihat Hasil Tes Seleksi Akademik</h4>
         </div>
         <div class="timeline-body">
-          <p>Setelah Calon Siswa melakukan Tes Seleksi di Sekolah, untuk selanjutnya Calon Siswa dapat melihat Hasil Tes yang sudah dilaksanakan di sekolah sesuai dengan Jadwal Tes yang sudah ditentukan. Hasil Tes dapat dilihat setelah Jadwal Tes selesai.</p>
-          <p>Jika Calon Siswa dinyatakan <b>LULUS</b> maka selanjutnya dapat menunggu Hasil Penerimaan.</p>
-          <p>Jika Calon Siswa dinyatakan <b>TIDAK LULUS</b> maka Calon Siswa sudah dipastikan tidak diterima dan dapat melakukan pendaftaran lagi sesuai dengan Jadwal Pendaftaran.</p>
+          <p>Setelah Calon mahasiswa melakukan Tes Seleksi di Kampus, untuk selanjutnya Calon mahasiswa dapat melihat Hasil Tes yang sudah dilaksanakan di Kampus sesuai dengan Jadwal Tes yang sudah ditentukan. Hasil Tes dapat dilihat dikampus.</p>
+          <p>Jika Calon mahasiswa dinyatakan <b>LULUS</b> maka selanjutnya dapat menunggu Hasil Penerimaan.</p>
           <hr>
-          <a href="{{ route('indexTesSeleksiAkademikSiswa') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman</a>
         </div>
       </div>
     </li>
