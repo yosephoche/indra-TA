@@ -89,36 +89,12 @@ class TesSeleksiAkademikController extends Controller
 
         if ($step->step_2 == 'active' || $step->step_3 == 'active') {
             $message_pembayaran = 'Silahkan melakukan Pembayaran kemudian Konfirmasi Pembayaran agar dapat mengikuti Tes Seleksi Akademik';
-        }
-
-        if ($this->timeCheck() && ($step->step_4 == 'active' || $step->step_5 == 'active' || $step->step_6 == 'active')) {
-            if ($this->user->calonsiswa->tesseleksi->status_tes_seleksi == 'belum dimulai') {
-                $message = 'Mulai Tes';
-                $route = 'indexQuizTesSeleksiAkademikSiswa';
-            } elseif ($this->user->calonsiswa->tesseleksi->status_tes_seleksi == 'sedang berjalan') {
-                $message = 'Lanjutkan Tes';
-                $route = 'indexQuizTesSeleksiAkademikSiswa';
-            } elseif ($this->user->calonsiswa->tesseleksi->status_tes_seleksi == 'selesai') {
-                $step = Step::where('no_pendf', $this->user->calonsiswa->no_pendf)->first();
-                $step->step_4 = 'complete';
-                $step->step_5 = 'active';
-                $step->save();
-                
-                $message = 'Lihat Hasil Tes';
-                $route = 'hasilTesSeleksiAkademikSiswa';
-            } elseif ($this->user->calonsiswa->tesseleksi->status_tes_seleksi == 'sudah lewat') {
-                $step = Step::where('no_pendf', $this->user->calonsiswa->no_pendf)->first();
-                $step->step_4 = 'complete';
-                $step->step_5 = 'active';
-                $step->save();
-                
-                $message = 'Lihat Hasil Tes';
-                $route = 'hasilTesSeleksiAkademikSiswa';
-            }
+        } else {
+            $message_pembayaran = '';
         }
 
         $jadwal_tes = $this->user->calonsiswa->jadwal;
-        return view('pages.siswa.tesseleksi.index2', compact('jadwal_tes','message','route','message_pembayaran','message_pembayarans'));    
+        return view('pages.siswa.tesseleksi.index2', compact('jadwal_tes','message_pembayaran'));    
     }
 
     public function quiz() {
@@ -256,14 +232,4 @@ class TesSeleksiAkademikController extends Controller
         return view('pages.siswa.tesseleksi.detail', compact('detailtes'));
     }
 
-    
-    // Index Lama
-    // public function index(){
-    // 	$hasil_tes_seleksi = $this->user->calonSiswa->hasilTesSeleksi;
-    // 	$jadwal_tes = DB::table('jadwal_pendaftarans')
-    //                 ->whereDate('tgl_mulai_tes','<=',$this->carbon)
-    //                 ->whereDate('tgl_akhir_tes','>=',$this->carbon)
-    //                 ->first();
-    // 	return view('pages.siswa.tesseleksi.index', compact('jadwal_tes','hasil_tes_seleksi'));
-    // }
 }

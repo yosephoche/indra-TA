@@ -9,6 +9,7 @@ use App\TahunAjaran;
 use App\JadwalPendaftaran;
 use App\CalonSiswa;
 use App\TesSeleksi;
+use App\Step;
 
 use DB;
 use Carbon\Carbon;
@@ -87,8 +88,15 @@ class TesSeleksiAkademikController extends Controller
             $tesseleksi->tgl_tes_akad = $this->dateFormat($data['tgl_tes_akad']);
             $tesseleksi->nilai_tes_seleksi = $data['nilai_tes_akad'];
             $tesseleksi->status_kelulusan = $data['sts_tes_akad'];
-            $tesseleksi->save();
+            if ($tesseleksi->save()) {
+                $step = Step::where('no_pendf', $data['no_pendf'])->first();
+                $step->step_4 = "complete";
+                $step->step_5 = "active";
+                $step->save();
+            }
+            
         }
+
         return redirect(route('indexTesSeleksiAkademikAdmin'));
     }
 

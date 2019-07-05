@@ -74,12 +74,12 @@
 
                             <li class="list-group-item justify-content-between">
                                 <span class="badge badge-default badge-pill pull-left" style="margin-right: 10px">2</span>
-                                Lulus Ujian Nasional SLTP/setingkat
+                                Lulus Ujian Nasional SMA/setingkat
                             </li>
 
                             <li class="list-group-item justify-content-between">
                                 <span class="badge badge-default badge-pill pull-left" style="margin-right: 10px">3</span>
-                                Berijazah SLTP/setingkat.   
+                                Berijazah SMA/setingkat.   
                             </li>
 
                             <li class="list-group-item justify-content-between">

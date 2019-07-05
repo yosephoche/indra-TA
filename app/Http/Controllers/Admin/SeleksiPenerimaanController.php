@@ -9,6 +9,7 @@ use App\TahunAjaran;
 use App\JadwalPendaftaran;
 use App\CalonSiswa;
 use App\TesSeleksi;
+use App\Step;
 
 use DB;
 use Carbon\Carbon;
@@ -23,9 +24,10 @@ class SeleksiPenerimaanController extends Controller
 
     public function index(){
     	$jadwal_terbuka = DB::table('jadwal_pendaftarans')
-                    ->whereDate('tgl_mulai_pendf','<=',$this->carbon)
-                    ->whereDate('tgl_hasil_seleksi','>=',$this->carbon)
-                    ->first();
+			->whereDate('tgl_mulai_pendf','<=',$this->carbon)
+			->whereDate('tgl_hasil_seleksi','>=',$this->carbon)
+			->first();
+
         if (is_null($jadwal_terbuka)) {
             $id_jadwal_terbuka = JadwalPendaftaran::orderBy('created_at','desc')->first()->id_jadwal;
         } else {
@@ -33,8 +35,8 @@ class SeleksiPenerimaanController extends Controller
         }
 
     	$tahunajarans = TahunAjaran::all();
-        $jadwal = JadwalPendaftaran::find($id_jadwal_terbuka);
-
+		$jadwal = JadwalPendaftaran::find($id_jadwal_terbuka);
+		
         $no_pendf_siswa_lulus = DB::table('tes_seleksis')
 			->join('calon_siswas','calon_siswas.no_pendf','tes_seleksis.no_pendf')
 			->join('jadwal_pendaftarans','jadwal_pendaftarans.id_jadwal','calon_siswas.id_jadwal')
@@ -48,14 +50,6 @@ class SeleksiPenerimaanController extends Controller
 			->select('calon_siswas.no_pendf','tahun_ajarans.id_th_ajaran','calon_siswas.kd_jurusan')
 			->get();
 
-
-			// DB::table('users')
-			//     ->where(function ($query){
-			//         $query->where('activated', '=', $activated);
-			//     })->get();
-
-
-		// dd($no_pendf_siswa_lulus);
 		$backdatas = [];
 		foreach ($no_pendf_siswa_lulus as $i=>$value) {
 			$backdatas['no_pendf'][$i] = $value->no_pendf;
@@ -69,7 +63,9 @@ class SeleksiPenerimaanController extends Controller
 		}
 
 		$sudah_diterima = CalonSiswa::where('id_jadwal', $id_jadwal_terbuka)->where('status_penerimaan','diterima')->get();       
-    	return view('pages.admin.seleksipenerimaan.index', compact('tahunajarans','jadwal','belum_diterima','sudah_diterima','backdatas'));
+		// dd($no_pendf_siswa_lulus, $sudah_diterima, $belum_diterima, $backdatas);
+		
+		return view('pages.admin.seleksipenerimaan.index', compact('tahunajarans','jadwal','belum_diterima','sudah_diterima','backdatas'));
     }
 
     public function postPenerimaan(Request $req){
@@ -86,7 +82,12 @@ class SeleksiPenerimaanController extends Controller
 	            $calonsiswa->save();	
     		} else {
                 
-            }
+			}
+			
+			$step = Step::where('no_pendf', $data['no_pendf'])->first();
+			$step->step_5 = "complete";
+			$step->step_6 = "active";
+			$step->save();
         }
         return redirect(route('indexSeleksiPenerimaanAdmin'));
     }

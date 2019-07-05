@@ -83,7 +83,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @isset($backdatas)
+                                    @if(!empty($backdatas))
                                     @foreach($belum_diterima as $no => $calonsiswa)
                                     <tr>
                                         <td class="text-center">{{ $no+1 }}</td>
@@ -114,7 +114,7 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                    @endisset
+                                    @endif
                                 </tbody>
                             </table>
                             <div class="row">
