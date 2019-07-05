@@ -34,7 +34,17 @@ class FullSeeder extends Seeder
     	$role = new Role();
     	$role->name = "siswa";
     	$role->description = "siswa";
-    	$role->save();
+		$role->save();
+		
+		$role = new Role();
+		$role->name = "pimpinan";
+		$role->description = "pimpinan kampus";
+		$role->save();
+
+		$role = new Role();
+		$role->name = "superadmin";
+		$role->description = "superadmin";
+		$role->save();
 
     	$user = new User();
     	$user->email = "panitia1@panitia1.com";

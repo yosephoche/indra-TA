@@ -17,7 +17,7 @@
             <li class="{{ Request::is('admin/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Pembayaran</span></a></li>
 
             {{-- Tambah Menu Tes Seleksi --}}
-            <li class="treeview">
+            <!-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa fa-circle-thin"></i> <span>Tes Seleksi</span>
                 </a>
@@ -25,10 +25,10 @@
                     <li><a href="{{ route('indexSoalAdmin') }}"><i class="fa fa-circle-o"></i> Soal</a></li>
                     <li class=""><a href="{{ route('indexTesSeleksiAkademikAdmin') }}"><i class='fa fa-circle-o'></i> <span>Tes Seleksi</span></a></li>
                 </ul>
-            </li>
+            </li> -->
 
             <li class="{{ Request::is('admin/seleksipenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexSeleksiPenerimaanAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Seleksi Penerimaan</span></a></li>
-            <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Siswa</span></a></li>
+            <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Mahasiswa</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

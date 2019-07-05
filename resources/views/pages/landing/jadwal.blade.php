@@ -36,28 +36,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if($jadwal_terbukas->isEmpty())
+                                @if(empty($jadwals))
                                     <tr>
                                         <td colspan="4"><h4 class="text-center">Maaf, Jadwal Pendaftaran belum dibuka</h4></td>
                                     </tr>
                                 @else
-                                @foreach($jadwal_terbukas as $jadwal)
-
-                                @isset($jadwal_terbuka)
-                                    @if($jadwal->id_jadwal === $jadwal_terbuka->id_jadwal)
-                                        <tr class="bg-green">
-                                    @else
-                                        <tr>
-                                    @endif
-                                @else
-                                    <tr>
-                                @endisset
-                                    <td class="text-capitalize">{{ $jadwal->nm_jadwal }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_pendf),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_pendf),"d M Y") }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_tes),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_tes),"d M Y") }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_hasil_seleksi),"d M Y") }}</td>
-                                </tr>
-                                @endforeach
+                                    @foreach($jadwals as $jadwal)
+                                        <tr class="{{ $jadwal->id_jadwal === $jadwal_terbuka->id_jadwal ? 'bg-green' : ''}}">
+                                            <td class="text-capitalize">{{ $jadwal->nm_jadwal }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_pendf),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_pendf),"d M Y") }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_tes),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_tes),"d M Y") }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_hasil_seleksi),"d M Y") }}</td>
+                                        </tr>
+                                    @endforeach
                                 @endif
                             </tbody>
                         </table>

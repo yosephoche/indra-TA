@@ -33,7 +33,7 @@ class PendaftaranController extends Controller
         }
 
         $calonsiswas = CalonSiswa::where('id_jadwal',$jadwal->id_jadwal)->paginate(20);
-        return view('pages.admin.pendaftaran.index', compact('tahunajarans','jadwals','jadwal','calonsiswas','paginates'));
+        return view('pages.admin.pendaftaran.index', compact('tahunajarans','jadwals','jadwal','calonsiswas'));
     }
 
     // public function postIndex(Request $req){
