@@ -31,7 +31,8 @@ class PendaftaranController extends Controller
 
     public function index(){
     	$jurusans = Jurusan::all();
-    	$calonsiswa = $this->user->calonsiswa;
+        $calonsiswa = $this->user->calonsiswa;
+        // dd(Auth::user()->calonsiswa);
     	return view('pages.siswa.pendaftaran.index', compact('calonsiswa','jurusans'));
     }
 

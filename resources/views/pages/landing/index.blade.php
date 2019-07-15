@@ -18,6 +18,8 @@
                     <a href="{{ route('panduanPendaftaranHomepage') }}" class="btn btn-default btn-flat btn-lg">Panduan Pendaftaran</a>
                 </div>
                 <br><br><br><br>
+                <h3>Untuk melakukan konfirmasi pembayaran silahkan <a href="/login"> Login Disini </a></h3>
+
             </div>
         </div>
     </div> <!--/ .container -->

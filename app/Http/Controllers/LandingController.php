@@ -11,6 +11,7 @@ use App\User;
 use App\Role;
 use App\Step;
 
+use Auth;
 use DB;
 use Image;
 use Carbon\Carbon;
@@ -55,6 +56,9 @@ class LandingController extends Controller
     }
 
     public function pendaftaran(){
+        // if (Auth::check()) {
+        //     dd('i am here');
+        // }
         $carbon = Carbon::now()->toDateString();
 
         $jadwal = DB::table('jadwal_pendaftarans')

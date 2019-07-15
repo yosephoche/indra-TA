@@ -29,6 +29,9 @@
 
             <li class="{{ Request::is('admin/seleksipenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexSeleksiPenerimaanAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Seleksi Penerimaan</span></a></li>
             <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Siswa</span></a></li>
+            <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexUserAdmin') }}"><i class='fa fa-circle-thin'></i> <span>User</span></a></li>
+            <!-- @if (Auth::user()->id_role == 3) -->
+            <!-- @endif -->
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -10,80 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route Test Area
-// Route::get('test2', function(){
-// 	$data = array(
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '1',
-// 									  			'nama_jenis' => 'Bagian 1 : Padanan Kata ( Sinonim)','desk_jenis' => 'Petunjuk : Carilah padanan kata (sinonim) yang tepat dari kata berikut ini',
-// 												'created_at' => '2018-01-29 23:04:52',
-// 												'updated_at' => '2018-01-29 23:04:52'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '2',
-// 									  			'nama_jenis' => 'Bagian 2 : Lawan Kata (Antonim)',
-// 									  			'desk_jenis' => 'Petunjuk : Carilah kebalikan arti atau yang memiliki arti yang berlawanan dari kata-kata berikut:',
-// 									  			'created_at' => '2018-01-29 23:05:17','updated_at' => '2018-01-29 23:05:17'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '3',
-// 									  			'nama_jenis' => 'Bagian 3 : Padanan atau Hubungan Kata (Analogi)',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:05:30',
-// 									  			'updated_at' => '2018-01-29 23:05:30'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '4',
-// 									  			'nama_jenis' => 'Bagian 4 : Pemahaman wacana',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:05:55',
-// 									  			'updated_at' => '2018-01-29 23:05:55'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '5',
-// 									  			'nama_jenis' => 'Bagian 5 : Test Deret Seri',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:06:06',
-// 									  			'updated_at' => '2018-01-29 23:06:06'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '6',
-// 									  			'nama_jenis' => 'Bagian 6 : Test Aritmatika',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:06:26',
-// 									  			'updated_at' => '2018-01-29 23:06:26'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '7',
-// 									  			'nama_jenis' => 'Bagian 7 : Subtes Geometri dan Aritmatika',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:06:36',
-// 									  			'updated_at' => '2018-01-29 23:06:36'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '8',
-// 									  			'nama_jenis' => 'Bagian 8 : Tes penalaran logis',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:06:46',
-// 									  			'updated_at' => '2018-01-29 23:06:46'),
-// 									  array(
-// 									  			'id_jenis_pertanyaan' => '9',
-// 									  			'nama_jenis' => 'Bagian 9 : Tes Penalaran Analitis',
-// 									  			'desk_jenis' => NULL,
-// 									  			'created_at' => '2018-01-29 23:06:57',
-// 									  			'updated_at' => '2018-01-29 23:06:57')
-// 									);
-// 	foreach ($data as $key => $value) {
-// 		dd($data);
-// 		foreach ($value as $k => $v) {
-// 			dd($v);
-// 		}
-// 	}
-// });
-
-// Route::group(['prefix' => 'qrcode'], function () {
-// 	Route::get('/{code}','BarcodeController@index')->name('indexBarcode');
-// });
 
 Route::group(['prefix' => 'print','middleware' => ['auth','role:siswa']], function () {
 	Route::get('/{jenis}/{id}','PrintController@index')->name('printBukti');
 });
-
-
-// End Route Test
 
 // Start Ajax Route
 Route::prefix('ajax')->group(function(){
@@ -98,9 +28,9 @@ Route::get('/pendaftaran', 'LandingController@pendaftaran')->name('pendaftaranHo
 Route::post('/pendaftaran', 'LandingController@postPendaftaran')->name('postPendaftaranHomepage');
 
 Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
+    // Route::get('/link1', function ()    {
+	// 	Uses Auth Middleware
+	// });
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
@@ -227,6 +157,16 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:admin']], functio
 		// Route::get('delete/{id}','Admin\SiswaController@delete')->name('deleteSiswaAdmin');
 		// Route::get('/search/{id}','Admin\SiswaController@search')->name('searchSiswaAdmin');
 	});
+
+	Route::prefix('user')->group(function(){
+		Route::get('/', 'Admin\UserController@index')->name('indexUserAdmin');
+		Route::get('/add', 'Admin\UserController@add')->name('addUserAdmin');
+		Route::post('/add', 'Admin\UserController@store')->name('storeUserAdmin');
+		Route::get('/detail/{nip}', 'Admin\UserController@detail')->name('detailUserAdmin');
+		Route::get('/edit/{nip}', 'Admin\UserController@edit')->name('editUserAdmin');
+		Route::post('/update', 'Admin\UserController@update')->name('updateUserAdmin');
+		Route::post('/delete/{nip}', 'Admin\UserController@delete')->name('deleteUserAdmin');
+	});
 });
 
 
@@ -276,9 +216,6 @@ Route::group(['prefix'=>'siswa', 'middleware' => ['auth','role:siswa']], functio
 // 	Route::get('/','SiswaController@index')->name('indexSiswa');
 // });
 
-
-
-
 Route::get('logout', function(){
 	Auth::logout();
 	return redirect(route('login'));
@@ -286,9 +223,6 @@ Route::get('logout', function(){
 Route::match(['get', 'post'], 'register', function(){
     return redirect('/login');
 });
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();

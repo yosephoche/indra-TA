@@ -46,7 +46,8 @@ class DaftarUlangController extends Controller
 	}
 
     public function index(){
-    	$daftarulang = $this->siswa->daftarulang;
+		$daftarulang = $this->siswa->daftarulang;
+		// dd($daftarulang);
     	return view('pages.siswa.daftarulang.index', compact('daftarulang'));
     }
 

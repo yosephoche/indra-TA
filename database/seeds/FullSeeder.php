@@ -206,7 +206,7 @@ class FullSeeder extends Seeder
 			$randomIndex = array_rand($range_limit);
 			$limit = $range_limit[$randomIndex];
 
-		    for ($i = 1; $i < $limit; $i++) {
+		    for ($i = 1; $i < 10; $i++) {
 				$count_pendaftaran = CalonSiswa::count();
 		        $no_pendaftaran = "DF" . date("y-") . (sprintf('%05d', $count_pendaftaran + 1));
 

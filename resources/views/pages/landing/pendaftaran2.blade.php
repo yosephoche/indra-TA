@@ -27,15 +27,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if (!Auth::check())
                 <div class="callout callout-info">
                     <h4>Selamat Datang di Halaman Pendaftaran Siswa Baru -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
 
                     <p>Silahkan isi semua data yang dibutuhkan, jika mengalami gangguan atau kesulitan dalam melakukan Registrasi / Pendaftaran ini silahkan Hubungi kami. </p>
                 </div>
+                @else
+                    <div class="callout callout-info">
+                    <h4>Selamat Datang Calon Siswa Baru -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
+
+                    <p>Untuk melakukan konfirmasi dan pendaftaraan ulang, silahkan masuk ke halaman <a href="{{ route('indexPendaftaranSiswa') }}">Dashboard</a> </p>
+                </div>
+                @endif
             </div>
         </div>
     </div>    
     <div class="container">
+        @if (!Auth::check())
         <form id="formPendaftaran" role="form" data-toggle="validator" class="form-horizontal" action="{{ route('postPendaftaranHomepage') }}" method="POST" data-bv-message="This value is not valid"
                       data-bv-feedbackicons-valid="fa fa-check"
                       data-bv-feedbackicons-invalid="fa fa-close"
@@ -190,6 +199,7 @@
             </div>
         </div>
         </form>
+        @endif
     </div>
 
     @endif

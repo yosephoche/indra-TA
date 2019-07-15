@@ -154,42 +154,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="box-body">
                                 <div class="row bs-wizard" style="border-bottom:0;">
                                 
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_1}}">
+                                    <div class="col-xs-2 bs-wizard-step step_1">
                                       <div class="text-center bs-wizard-stepnum">1. Pendaftaran</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
                                       {{-- <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div> --}}
                                     </div>
                                     
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_2}}"><!-- complete -->
+                                    <div class="col-xs-2 bs-wizard-step step_2"><!-- complete -->
                                       <div class="text-center bs-wizard-stepnum">2. Pembayaran Registrasi</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
                                       {{-- <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div> --}}
                                     </div>
                                     
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_3}} quadrat"><!-- complete -->
+                                    <div class="col-xs-2 bs-wizard-step step_3 quadrat"><!-- complete -->
                                       <div class="text-center bs-wizard-stepnum">3. Kofirmasi Pembayaran</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
                                       {{-- <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div> --}}
                                     </div>
                                     
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_4}}"><!-- active -->
+                                    <div class="col-xs-2 bs-wizard-step step_4"><!-- active -->
                                       <div class="text-center bs-wizard-stepnum">4. Tes Seleksi Akademik</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
                                       {{-- <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div> --}}
                                     </div>
 
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_5}}"><!-- active -->
+                                    <div class="col-xs-2 bs-wizard-step step_5"><!-- active -->
                                       <div class="text-center bs-wizard-stepnum">5. Hasil Tes Seleksi</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
                                       {{-- <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div> --}}
                                     </div>
 
-                                    <div class="col-xs-2 bs-wizard-step {{ Auth::user()->calonsiswa->steps->step_6}}"><!-- active -->
+                                    <div class="col-xs-2 bs-wizard-step step_6"><!-- active -->
                                       <div class="text-center bs-wizard-stepnum">6. Hasil Penerimaan</div>
                                       <div class="progress"><div class="progress-bar"></div></div>
                                       <a href="#" class="bs-wizard-dot"></a>
