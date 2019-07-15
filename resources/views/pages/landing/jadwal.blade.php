@@ -10,7 +10,7 @@
                 <div class="callout callout-info text-center">
                     <h4>Jadwal Pendaftaran <b class="text-capitalize">{{ $jadwal_terbuka->nm_jadwal }} - Tahun Ajaran {{ $jadwal_terbuka->th_ajaran }}</b> - Sudah Dibuka</h4>
 
-                    <p>Silahkan Menuju Halaman Pendaftaran untuk melakukan Pendaftaran Siswa Baru</p>
+                    <p>Silahkan Menuju Halaman Pendaftaran untuk melakukan Pendaftaran Mahasiswa Baru</p>
                     <br>
                     <a href="{{ route('pendaftaranHomepage') }}" class="btn btn-primary btn-flat"><i class="fa fa-link"></i>   Halaman Pendaftaran</a>
                 </div>
@@ -23,7 +23,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-body">
-                        <h3 class="text-center">Jadwal Pendaftaran Online Siswa Baru</h3>
+                        <h3 class="text-center">Jadwal Pendaftaran Online Mahasiswa Baru</h3>
 
                         <hr>            
                         <table class="table table-bordered table-stripped align-middle">
@@ -57,7 +57,7 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <div class="box-title">
-                            Syarat-syarat Pendaftaran Calon Siswa:
+                            Syarat-syarat Pendaftaran Calon Mahasiswa:
                         </div>
                     </div>
                     <div class="box-body">

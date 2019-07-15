@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-body center-block text-center">
-                        <h3>Pendaftaran Siswa Baru Belum Dibuka</h3>
+                        <h3>Pendaftaran Mahasiswa Baru Belum Dibuka</h3>
                         <h4>Silahkan menuju Halaman Jadwal Pendaftaran untuk mengetahui tanggal pendaftaran.</h4>
                         <br>
                         <a href="{{ route('jadwalHomepage') }}" class="btn btn-flat btn-primary"><i class="fa fa-link"></i> Halaman Jadwal Pendaftaran</a>
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="callout callout-info">
-                    <h4>Selamat Datang di Halaman Pendaftaran Siswa Baru -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
+                    <h4>Selamat Datang di Halaman Pendaftaran Mahasiswa Baru -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
 
                     <p>Silahkan isi semua data yang dibutuhkan, jika mengalami gangguan atau kesulitan dalam melakukan Registrasi / Pendaftaran ini silahkan Hubungi kami. </p>
                 </div>

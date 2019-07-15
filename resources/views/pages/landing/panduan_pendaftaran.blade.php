@@ -7,7 +7,7 @@
 @section('main-content')
 <div class="container">
   <div class="page-header">
-    <h1 id="timeline">Panduan Pendaftaran Siswa Baru</h1>
+    <h1 id="timeline">Panduan Pendaftaran Mahasiswa Baru</h1>
   </div>
   <ul class="timeline">
 
@@ -19,7 +19,7 @@
           <h4 class="timeline-title">1. Registrasi</h4>
         </div>
         <div class="timeline-body">
-          <p>Calon Siswa melakukan Registrasi / Pendaftaran <b>secara online</b> dengan cara melengkapi Formulir Pendaftaran yang berisikan <b>Data Pribadi</b>, <b>Data Pendidikan</b> dan <b>Data Orang Tua / Wali</b></p>
+          <p>Calon Mahasiswa melakukan Registrasi / Pendaftaran <b>secara online</b> dengan cara melengkapi Formulir Pendaftaran yang berisikan <b>Data Pribadi</b>, <b>Data Pendidikan</b> dan <b>Data Orang Tua / Wali</b></p>
           <hr>
           <a href="{{ route('pendaftaranHomepage') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman</a>
         </div>
@@ -34,7 +34,7 @@
           <h4 class="timeline-title">2. Pembayaran Registrasi</h4>
         </div>
         <div class="timeline-body">
-          <p>Calon Siswa melakukan pembayaran sebesar Rp. 100.000,- melalui Transfer Bank ke Rekening <b>BCA a.n. WAHYU SIGIT - 0918298129 </b> Paling Lambat <b>2 x 24Jam</b> setelah Calon Siswa melakukan Registrasi / Pendaftaran.</p>
+          <p>Calon mahasiswa melakukan pembayaran sebesar Rp. 100.000,- melalui Transfer Bank ke Rekening <b>BRI a.n. INDRA WIJAYA - 0918298129 </b> Paling Lambat <b>2 x 24Jam</b> setelah Calon Mahasiswa melakukan Registrasi / Pendaftaran.</p>
         </div>
       </div>
     </li>
@@ -62,7 +62,7 @@
           <h4 class="timeline-title">4. Tes Seleksi Akademik</h4>
         </div>
         <div class="timeline-body">
-          <p>Calon Siswa melakukan Tes Seleksi Akademik dengan cara datang langsung ke Kampus sesuai dengan Jadwal Tes yang sudah ditentukan. Tes Seleksi dimulai pukul 10.00 - selesai, agar memperlancar jalannya Tes Seleksi ini Calon Siswa diharapkan datang 1 jam lebih awal sebelum Tes Seleksi dimulai. Tes Seleksi ini hanya dilakukan 1x</p>
+          <p>Calon mahasiswa melakukan Tes Seleksi Akademik dengan datang langsung ke Kampus sesuai dengan Jadwal Tes yang sudah ditentukan. Tes Seleksi dimulai pukul 10.00 - selesai, agar memperlancar jalannya Tes Seleksi ini Calon Siswa diharapkan datang 1 jam lebih awal sebelum Tes Seleksi dimulai. Tes Seleksi ini hanya dilakukan 1x</p>
         </div>
       </div>
     </li>
@@ -90,7 +90,7 @@
           <h4 class="timeline-title">6. Melihat Hasil Penerimaan</h4>
         </div>
         <div class="timeline-body">
-          <p>Hasil Penerimaan hanya dapat dilihat oleh Calon Siswa yang sudah dinyatakan <b>LULUS</b> Tes Seleksi Akademik. Hasil Penerimaan dapat dilihat sesuai dengan Jadwal yang sudah ditentukan</p>
+          <p>Hasil Penerimaan hanya dapat dilihat oleh Calon Mahasiswa yang sudah dinyatakan <b>LULUS</b> Tes Seleksi Akademik. Hasil Penerimaan dapat dilihat sesuai dengan Jadwal yang sudah ditentukan</p>
           <hr>
           <a href="{{ route('indexHasilPenerimaanSiswa') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman</a>
         </div>

@@ -4,9 +4,9 @@
     <!-- Logo -->
     <a href="{{ route('indexAdmin') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>PSB</b></span>
+        <span class="logo-mini"><b>PMB</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>PSB</b>SMK </span>
+        <span class="logo-lg"><b>PMB</b>STIH</span>
     </a>
 
     <!-- Header Navbar -->
