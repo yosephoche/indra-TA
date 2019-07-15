@@ -33,22 +33,25 @@ class LandingController extends Controller
     }
 
     public function jadwal(){
+        $now = Carbon::now();
         // $jadwals = JadwalPendaftaran::all();
-        $jadwal_terbuka = DB::table('jadwal_pendaftarans')
-                    ->join('tahun_ajarans','tahun_ajarans.id_th_ajaran','jadwal_pendaftarans.id_th_ajaran')
-                    // ->where('tahun_ajarans.th_ajaran','LIKE','%' . '2018/' . '%')
-                    // ->select('jadwal_pendaftarans.*','tahun_ajarans.*')
-                    ->whereDate('tgl_mulai_pendf','<=',$this->carbon->toDateString())
-                    ->whereDate('tgl_akhir_pendf','>=',$this->carbon->toDateString())
-                    ->first();
+        $jadwals = DB::table('jadwal_pendaftarans')
+            ->join('tahun_ajarans','tahun_ajarans.id_th_ajaran','jadwal_pendaftarans.id_th_ajaran')
+            ->where('tahun_ajarans.th_ajaran','LIKE','%' . $now->year.'/%')
+            ->select('jadwal_pendaftarans.*','tahun_ajarans.*')
+            // ->whereDate('tgl_mulai_pendf','<=',$this->carbon->toDateString())
+            // ->whereDate('tgl_akhir_pendf','>=',$this->carbon->toDateString())
+            ->get();
+        
+        $jadwal_terbuka = [];
+        foreach ($jadwals as $key => $jadwal) {
+            if ($jadwal->tgl_mulai_pendf <= $this->carbon->toDateString()) {
+                $jadwal_terbuka = $jadwal;
+            }
+        }
 
-        $jadwal_terbukas = DB::table('jadwal_pendaftarans')
-                    ->join('tahun_ajarans','tahun_ajarans.id_th_ajaran','jadwal_pendaftarans.id_th_ajaran')
-                    ->where('tahun_ajarans.th_ajaran','LIKE','%' . '2018/' . '%')
-                    // ->whereDate('tgl_mulai_pendf','<=',$this->carbon)
-                    // ->whereDate('tgl_akhir_pendf','>=',$this->carbon)
-                    ->get();
-        return view('pages.landing.jadwal',compact('jadwals','jadwal_terbuka','jadwal_terbukas'));
+        // dd($jadwals);
+        return view('pages.landing.jadwal',compact('jadwals','jadwal_terbuka'));
     }
 
     public function panduanPendaftaran(){

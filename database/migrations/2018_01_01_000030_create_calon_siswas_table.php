@@ -23,14 +23,14 @@ class CreateCalonSiswasTable extends Migration
             $table->string('nm_cln_siswa', 20);
             $table->string('nisn', 10);
             $table->enum('jns_kelamin',['l','p']);
-            $table->string('tmp_lahir', 12);
+            $table->string('tmp_lahir', 20);
             $table->date('tgl_lahir');
             $table->enum('agama', ['islam','kristen','katolik','hindu','budha',]);
             $table->string('alamat', 120);
             $table->string('nm_ortu', 20);
-            $table->string('pkrj_ortu', 10);
+            $table->string('pkrj_ortu', 50);
             $table->integer('gaji_ortu');
-            $table->string('sklh_asal', 17);
+            $table->string('sklh_asal', 200);
             $table->enum('status_tes',['sudah','belum'])->default('belum');
             $table->enum('status_pembayaran',['sudah','belum'])->default('belum');
             $table->enum('status_penerimaan',['diterima','tidak diterima'])->nullable();

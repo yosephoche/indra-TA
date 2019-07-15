@@ -1,15 +1,15 @@
 @extends('layouts.siswa')
 @section('main-content')
 <div class="row">
-    @isset($message_header)
+    <!-- @isset($message_header)
         <div class="col-md-12">
             <div class="callout callout-info text-center">
                 <h4>{{ $message_header }}</h4>
                 <p>{{ $message_content }}</p>
             </div>
         </div>
-    @endisset
-    @isset($calonsiswa)
+    @endisset -->
+    <!-- @isset($calonsiswa) -->
         @if($calonsiswa->status_penerimaan == "diterima")
         <div class="col-md-12">
             <div class="callout callout-success text-center">
@@ -43,19 +43,19 @@
                 </div>
                 <hr>
                 <div class="box-body text-center">
-                    <h3>Bagi calon siswa yang sudah dinyatakan "LULUS" dan "DITERIMA"<br>Silahkan datang ke Sekolah pada tanggal <b>23 Februari 2018</b><br>Sesuai dengan kelas masing-masin dan membawa Bukti Pembayaran, Bukti Tes Seleksi dan Bukti Daftar Ulang.</h3>
+                    <h3>Bagi calon mahasiswa yang sudah dinyatakan "LULUS" dan "DITERIMA"<br>Silahkan datang ke Kampus untuk melakukan pendaftaran ulang dan verifikasi berkas <br>dan membawa dokumen-dokumen asli.</h3>
                 </div>
                 <div class="box-footer"></div>
             </div>
         </div>
         @else
         <div class="col-md-12">
-            <div class="callout callout-danger text-center">
-                <h4>Anda Tidak Diterima</h4>
+            <div class="callout callout-default text-center">
+                <h4>Belum ada pengumuman penerimaan.</h4>
             </div>
         </div>
         @endif
-    @endisset
+    <!-- @endisset -->
 </div>
 @endsection
 

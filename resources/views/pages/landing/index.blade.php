@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('htmlheader_title')
-    {{ trans('Selamat Datang Calon Siswa Baru') }}
+    {{ trans('Selamat Datang Calon MahasiswaBaru') }}
 @endsection
 
 @section('main-content')
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-12">
-                <h3>Selamat Datang di Sistem Informasi Penerimaan Mahasiswa Baru</h3>
+                <h3>Selamat Datang di Sistem Informasi Penerimaan Mahasiswa Baru STIH Damarica Palopo</h3>
                 <hr>
                 <h1>Pendaftaran Online</h1>
                 <br><br>

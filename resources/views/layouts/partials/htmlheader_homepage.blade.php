@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('htmlheader_title', 'Your title here') - PSB SMK</title>
+    <title>@yield('htmlheader_title', 'Your title here') - PMB STIH DAMARICA</title>
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/all-landing.css') }}" rel="stylesheet">

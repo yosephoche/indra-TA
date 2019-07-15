@@ -10,7 +10,7 @@
                 <div class="callout callout-info text-center">
                     <h4>Jadwal Pendaftaran <b class="text-capitalize">{{ $jadwal_terbuka->nm_jadwal }} - Tahun Ajaran {{ $jadwal_terbuka->th_ajaran }}</b> - Sudah Dibuka</h4>
 
-                    <p>Silahkan Menuju Halaman Pendaftaran untuk melakukan Pendaftaran Siswa Baru</p>
+                    <p>Silahkan Menuju Halaman Pendaftaran untuk melakukan Pendaftaran Mahasiswa Baru</p>
                     <br>
                     <a href="{{ route('pendaftaranHomepage') }}" class="btn btn-primary btn-flat"><i class="fa fa-link"></i>   Halaman Pendaftaran</a>
                 </div>
@@ -23,7 +23,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-body">
-                        <h3 class="text-center">Jadwal Pendaftaran Online Siswa Baru</h3>
+                        <h3 class="text-center">Jadwal Pendaftaran Online Mahasiswa Baru</h3>
 
                         <hr>            
                         <table class="table table-bordered table-stripped align-middle">
@@ -36,28 +36,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if($jadwal_terbukas->isEmpty())
+                                @if(empty($jadwals))
                                     <tr>
                                         <td colspan="4"><h4 class="text-center">Maaf, Jadwal Pendaftaran belum dibuka</h4></td>
                                     </tr>
                                 @else
-                                @foreach($jadwal_terbukas as $jadwal)
-
-                                @isset($jadwal_terbuka)
-                                    @if($jadwal->id_jadwal === $jadwal_terbuka->id_jadwal)
-                                        <tr class="bg-green">
-                                    @else
-                                        <tr>
-                                    @endif
-                                @else
-                                    <tr>
-                                @endisset
-                                    <td class="text-capitalize">{{ $jadwal->nm_jadwal }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_pendf),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_pendf),"d M Y") }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_tes),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_tes),"d M Y") }}</td>
-                                    <td class="text-center">{{ date_format(date_create($jadwal->tgl_hasil_seleksi),"d M Y") }}</td>
-                                </tr>
-                                @endforeach
+                                    @foreach($jadwals as $jadwal)
+                                        <tr class="{{ $jadwal->id_jadwal === $jadwal_terbuka->id_jadwal ? 'bg-green' : ''}}">
+                                            <td class="text-capitalize">{{ $jadwal->nm_jadwal }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_pendf),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_pendf),"d M Y") }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_mulai_tes),"d M Y") }} s.d {{ date_format(date_create($jadwal->tgl_akhir_tes),"d M Y") }}</td>
+                                            <td class="text-center">{{ date_format(date_create($jadwal->tgl_hasil_seleksi),"d M Y") }}</td>
+                                        </tr>
+                                    @endforeach
                                 @endif
                             </tbody>
                         </table>
@@ -66,7 +57,7 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <div class="box-title">
-                            Syarat-syarat Pendaftaran Calon Siswa:
+                            Syarat-syarat Pendaftaran Calon Mahasiswa:
                         </div>
                     </div>
                     <div class="box-body">
@@ -83,12 +74,12 @@
 
                             <li class="list-group-item justify-content-between">
                                 <span class="badge badge-default badge-pill pull-left" style="margin-right: 10px">2</span>
-                                Lulus Ujian Nasional SLTP/setingkat
+                                Lulus Ujian Nasional SMA/setingkat
                             </li>
 
                             <li class="list-group-item justify-content-between">
                                 <span class="badge badge-default badge-pill pull-left" style="margin-right: 10px">3</span>
-                                Berijazah SLTP/setingkat.   
+                                Berijazah SMA/setingkat.   
                             </li>
 
                             <li class="list-group-item justify-content-between">

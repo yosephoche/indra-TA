@@ -36,7 +36,7 @@
             <li class="{{ Request::is('siswa/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranSiswa') }}"><i class='fa fa-credit-card'></i> <span>Konfirmasi Pembayaran</span></a></li>
             <li class="{{ Request::is('siswa/tesseleksi*') ? 'active' : '' }}"><a href="{{ route('indexTesSeleksiAkademikSiswa') }}"><i class='fa fa-file-o'></i> <span>Tes Seleksi Akademik</span></a></li>
             <li class="{{ Request::is('siswa/hasilpenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexHasilPenerimaanSiswa') }}"><i class='fa fa-check-square-o'></i> <span>Hasil Penerimaan</span></a></li>
-            <li class="{{ Request::is('siswa/daftarulang*') ? 'active' : '' }}"><a href="{{ route('indexDaftarUlangSiswa') }}"><i class='fa fa-check-square-o'></i> <span>Daftar Ulang</span></a></li>
+            <!-- <li class="{{ Request::is('siswa/daftarulang*') ? 'active' : '' }}"><a href="{{ route('indexDaftarUlangSiswa') }}"><i class='fa fa-check-square-o'></i> <span>Daftar Ulang</span></a></li> -->
 
         </ul><!-- /.sidebar-menu -->
     </section>

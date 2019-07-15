@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="callout callout-danger">
             <h4>Anda belum melakukan Konfirmasi Pembayaran</h4>
-            <p>Calon Siswa melakukan pembayaran sebesar Rp. 100.000,- melalui Transfer Bank ke Rekening BCA a.n. WAHYU SIGIT - 0918298129 Paling Lambat 2 x 24Jam setelah Calon Siswa melakukan Registrasi / Pendaftaran.</p>
+            <p>Calon mahasiswa melakukan pembayaran sebesar Rp. 100.000,- melalui Transfer Bank ke Rekening BCA a.n. WAHYU SIGIT - 0918298129 Paling Lambat 2 x 24Jam setelah melakukan Registrasi / Pendaftaran.</p>
         </div>
     </div>
     <form id="formKonfirmasiPembayaran" class="form-horizontal" action="{{ route('konfirmasiPembayaranSiswa') }}" method="POST">

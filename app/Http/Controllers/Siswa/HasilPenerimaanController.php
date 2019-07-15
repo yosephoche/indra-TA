@@ -30,6 +30,8 @@ class HasilPenerimaanController extends Controller
 
     public function index(){
     	$jadwal_terbuka = $this->user->calonsiswa->jadwal->tgl_hasil_seleksi;
+		$calonsiswa = $this->user->calonsiswa;
+		return view('pages.siswa.hasilpenerimaan.index',compact('calonsiswa'));
     	if ($jadwal_terbuka == $this->carbon->toDateString()) {
     		$calonsiswa = $this->user->calonsiswa;
 
