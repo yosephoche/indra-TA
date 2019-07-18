@@ -16,29 +16,13 @@
 						<hr>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<h3>Tanda Bukti Pembayaran Registrasi / Pendaftaran Online - PSB SMK</h3>
+								<h3>Tanda Bukti Pembayaran Registrasi / Pendaftaran Online - PMB STIH</h3>
 								{{-- <h4 class="text-capitalize">Tahun Ajaran : {{ $calonsiswa->pembayaran->calonsiswa->jadwal->tahunAjaran->th_ajaran }} - {{ $calonsiswa->pembayaran->calonsiswa->jadwal->nm_jadwal }}</h4> --}}
 							</div>
 						</div>
 						<hr>
 						<div class="row">
-							<div class="col-md-12">
-								<div class="row">
-									<div class="col-md-2">
-										<img src="{{ asset($qr->qr_code_image) }}" class="img-thumbnail img-responsive">
-									</div>	
-									<div class="col-md-10">
-										<h4>No. QR :<br>
-											<b>{{ $qr->qr_code }}</b>
-										</h4>
-										<h4>Jenis QR :<br>
-											<b class="text-capitalize">{{ $qr->jenis }}</b>
-										</h4>
-									</div>
-								</div>
-								
-							</div>
-						</div>
+							
 						<hr>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-3">

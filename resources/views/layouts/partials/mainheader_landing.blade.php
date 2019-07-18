@@ -11,6 +11,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
+            <li><a href="{{ route('indexHomepage') }}"><i class="fa fa-home"></i>    Home </a></li>
             <li><a href="{{ route('pendaftaranHomepage') }}"><i class="fa fa-user-circle-o"></i>    Pendaftaran </a></li>
             <li><a href="{{ route('panduanPendaftaranHomepage') }}"><i class="fa fa-map-o"></i>   Panduan Pendaftaran</a></li>
             <li><a href="{{ route('jadwalHomepage') }}"><i class="fa fa-calendar"></i>   Informasi & Jadwal </a></li>

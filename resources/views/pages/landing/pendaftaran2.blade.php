@@ -146,6 +146,24 @@
                             <label class="col-sm-4 control-label">Penghasilan</label>
                             <div class="col-sm-5">
                                 <input type="number" class="form-control" name="gaji_ortu" required="required" autocomplete="off">
+                                {{-- <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="1000000 - 2000000">
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        Rp. 1.000.000 - Rp. 2.500.000
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="2600000 - 4000000">
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        Rp. 2.600.000 - Rp. 4.000.000
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="> 4000000">
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        > Rp. 4.000.000
+                                    </label>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

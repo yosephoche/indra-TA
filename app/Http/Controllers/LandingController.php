@@ -74,6 +74,7 @@ class LandingController extends Controller
     }
 
     public function postPendaftaran(Request $req){
+        // dd($req);
         $id_role = Role::where('name','siswa')->first()->id_role;
 
         $user = new User();

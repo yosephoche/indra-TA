@@ -10,7 +10,7 @@
 
             <!-- Baru -->
             {{-- <li><a href="{{ route('indexAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Home</span></a></li> --}}
-            <li class="{{ Request::is('admin/profile*') ? 'active' : '' }}"><a href="{{ route('indexProfileAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Home</span></a></li>
+            <li class="{{ Request::is('admin/profile*') ? 'active' : '' }}"><a href="{{ route('indexProfileAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Admin</span></a></li>
             <li class="{{ Request::is('admin/jurusankelas*') ? 'active' : '' }}"><a href="{{ route('indexJurusanKelasAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Jurusan & Kelas</span></a></li>
             <li class="{{ Request::is('admin/jadwal*') ? 'active' : '' }}"><a href="{{ route('indexJadwalAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Jadwal</span></a></li>
             <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Pendaftaran</span></a></li>
@@ -18,9 +18,9 @@
 
             {{-- Tambah Menu Tes Seleksi --}}
             <li>
-                <a href="{{ route('indexTesSeleksiAkademikAdmin') }}">
+                {{-- <a href="{{ route('indexTesSeleksiAkademikAdmin') }}">
                     <i class="fa fa fa-circle-thin"></i> <span>Hasil Seleksi</span>
-                </a>
+                </a> --}}
                 <!-- <ul class="treeview-menu">
                     <li><a href="{{ route('indexSoalAdmin') }}"><i class="fa fa-circle-o"></i> Soal</a></li>
                     <li class=""><a href="{{ route('indexTesSeleksiAkademikAdmin') }}"><i class='fa fa-circle-o'></i> <span>Tes Seleksi</span></a></li>

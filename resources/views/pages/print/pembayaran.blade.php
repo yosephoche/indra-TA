@@ -16,14 +16,14 @@
 					<div class="row">
 						
 						<div class="col-md-12 text-center">
-							<h3>Tanda Bukti Pembayaran Registrasi / Pendaftaran Online - PSB SMK</h3>
+							<h3>Tanda Bukti Pembayaran Registrasi / Pendaftaran Online - PMB STIH</h3>
 							<h4 class="text-capitalize">Tahun Ajaran : {{ $pembayaran->calonsiswa->jadwal->tahunAjaran->th_ajaran }} - {{ $pembayaran->calonsiswa->jadwal->nm_jadwal }}</h4>
 						</div>
 					</div>
 					<hr>
 					<div class="row">
 						<div class="col-md-3">
-							<img src="{{ $img_qr }}" class="img-thumbnail img-responsive">
+							{{-- <img src="{{ $img_qr }}" class="img-thumbnail img-responsive"> --}}
 						</div>
 						<div class="col-md-6">
 							<table class="table table-bordered table-hover">
