@@ -29,6 +29,11 @@
 
             <li class="{{ Request::is('admin/seleksipenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexSeleksiPenerimaanAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Seleksi Penerimaan</span></a></li>
             <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Mahasiswa</span></a></li>
+
+            @if (Auth::user()->hasRole('superadmin'))
+                <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexUserAdmin') }}"><i class='fa fa-user'></i> <span>User Management</span></a></li>
+                
+            @endif
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

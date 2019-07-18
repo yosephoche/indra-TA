@@ -40,7 +40,7 @@ Route::get('test', function(){
 	dd(bcrypt('(*#&42#4(*&))'));
 });
 
-Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:admin']], function(){
+Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin']], function(){
 	Route::prefix('profile')->group(function(){
 		Route::get('/','Admin\ProfilController@index')->name('indexProfileAdmin');
 		Route::get('edit','Admin\ProfilController@edit')->name('editProfileAdmin');

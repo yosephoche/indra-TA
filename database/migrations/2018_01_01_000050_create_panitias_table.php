@@ -15,7 +15,7 @@ class CreatePanitiasTable extends Migration
     {
         Schema::create('panitias', function (Blueprint $table) {
             // $table->increments('id');
-            $table->string('nip',5)->primary(); // PK
+            $table->string('nip', 20)->primary(); // PK
             $table->unsignedInteger('id_user')->unique();  // FK
             $table->string('nm_panitia',20);
             $table->enum('jns_kelamin',['l','p']);

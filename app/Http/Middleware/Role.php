@@ -14,17 +14,30 @@ class Role
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, ... $roles)
     {
-        if (! $request->user()->hasRole($role)) {
-            if (Auth::user()->hasRole('siswa')) {
-                return redirect(route('indexPendaftaranSiswa'));
-            } else if (Auth::user()->hasRole('admin')) {
-                return redirect(route('indexJurusanKelasAdmin'));
-            } else {
-                return redirect(route('logout'));
-            }
+        if (!Auth::check()) // I included this check because you have it, but it really should be part of your 'auth' middleware, most likely added as part of a route group.
+            return redirect('login');
+        
+        $user = Auth::user();
+
+        if ($user->hasRole('superadmin')) {
+            return $next($request);
         }
+
+        foreach ($roles as $role) {
+            if($user->hasRole($role))
+                return $next($request);
+        }
+        // if (! $request->user()->hasRole($role)) {
+        //     if (Auth::user()->hasRole('siswa')) {
+        //         return redirect(route('indexPendaftaranSiswa'));
+        //     } else if (Auth::user()->hasRole('admin')) {
+        //         return redirect(route('indexJurusanKelasAdmin'));
+        //     } else {
+        //         return redirect(route('logout'));
+        //     }
+        // }
         return $next($request);
     }
 }
