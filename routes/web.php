@@ -41,6 +41,7 @@ Route::get('test', function(){
 });
 
 Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin']], function(){
+	Route::get('/','Admin\AdminController@index')->name('indexAdmin');
 	Route::prefix('profile')->group(function(){
 		Route::get('/','Admin\ProfilController@index')->name('indexProfileAdmin');
 		Route::get('edit','Admin\ProfilController@edit')->name('editProfileAdmin');
@@ -55,7 +56,6 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin
 		Route::get('/search/{id}','Admin\TahunAjaranController@search')->name('searchTahunAjaranAdmin');
 		// Route::get('detail','Admin\TahunAjaranControllern@index')->name('detailTahunAjaranAdmin');
 	});
-	Route::get('/','Admin\AdminController@index')->name('indexAdmin');
 
 	Route::prefix('pendaftaran')->group(function(){
 		Route::get('/{id_jadwal?}','Admin\PendaftaranController@index')->name('indexPendaftaranAdmin');
@@ -169,7 +169,9 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin
 	});
 });
 
-
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'role:pimpinan']], function () {
+	Route::get('/laporan', 'Admin\LaporanController@index')->name('indexLaporan');
+});
 // Route::prefix('/siswa')->group(function(){
 Route::group(['prefix'=>'siswa', 'middleware' => ['auth','role:siswa']], function(){
 	// Route::get('/','Siswa\SiswaController@index')->name('indexSiswa');

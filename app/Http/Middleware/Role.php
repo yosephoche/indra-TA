@@ -25,6 +25,10 @@ class Role
             return $next($request);
         }
 
+        if ($user->hasRole('pimpinan')) {
+            return $next($request);
+        }
+
         foreach ($roles as $role) {
             if($user->hasRole($role))
                 return $next($request);
