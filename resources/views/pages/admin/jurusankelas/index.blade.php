@@ -110,11 +110,11 @@
                             <td colspan="5"><h5 class="text-center">Maaf, Data Kelas Tahun Ajaran {{ $tahunajaran->th_ajaran }} kosong</h5></td>
                         </tr>
                         @else
-                        @foreach($kelas as $no=>$kls)
+                        @foreach($kelas as $no => $kls)
                         <tr>
                             <td class="text-center">{{ $no+1 }}</td>
                             <td class="text-uppercase">{{ $kls->kd_kelas }}</td>
-                            <td class="text-capitalize">{{ $kls->kd_jurusan }}</td>
+                            <td class="text-capitalize">{{ $kls->jurusan->nm_jurusan }}</td>
                             <td class="text-capitalize">{{ $kls->nm_kelas }} - ({{ $kls->siswa->count() }} Siswa)</td>
                             <td class="text-center">
                                 <div class="btn-group">

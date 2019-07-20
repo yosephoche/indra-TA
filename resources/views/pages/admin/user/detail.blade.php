@@ -66,7 +66,7 @@
                     </div>
                     <div class="box-footer">
                         <div class="pull-right">
-                            <a href="{{ route('editProfileAdmin') }}" class="btn btn-primary btn-flat"> <i class="fa fa-edit"></i> Ubah</a>
+                            <a href="{{ route('editUserAdmin', $panitia->nip) }}" class="btn btn-primary btn-flat"> <i class="fa fa-edit"></i> Ubah</a>
                         </div>
                     </div>
                 </div>
