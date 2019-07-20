@@ -50,7 +50,7 @@ Route::group(['prefix' => 'coba','middleware' => ['admin:admin,superadmin']], fu
 	})->middleware('admin:superadmin');
 });
 
-Route::get('/admin','Admin\AdminController@index')->name('indexAdmin');
+Route::get('/admin','Admin\AdminController@index')->middleware('role:superadmin,admin,pimpinan')->name('indexAdmin');
 Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin,admin']], function(){
 	Route::prefix('profile')->group(function(){
 		Route::get('/','Admin\ProfilController@index')->name('indexProfileAdmin');
