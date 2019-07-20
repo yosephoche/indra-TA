@@ -11,7 +11,7 @@
             @if (!Auth::user()->hasRole('pimpinan'))
                 <li class="{{ Request::is('admin/jurusankelas*') ? 'active' : '' }}"><a href="{{ route('indexJurusanKelasAdmin') }}"><i class='fa fa-building-o'></i> <span>Jurusan & Kelas</span></a></li>
                 <li class="{{ Request::is('admin/jadwal*') ? 'active' : '' }}"><a href="{{ route('indexJadwalAdmin') }}"><i class='fa fa-calendar'></i> <span>Jadwal</span></a></li>
-                <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-pencil'></i> <span>Pendaftaran</span></a></li>
+                {{-- <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-pencil'></i> <span>Pendaftaran</span></a></li> --}}
                 <li class="{{ Request::is('admin/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranAdmin') }}"><i class='fa fa-credit-card'></i> <span>Pembayaran</span></a></li>
                 <li class="{{ Request::is('admin/seleksipenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexSeleksiPenerimaanAdmin') }}"><i class='fa fa-check'></i> <span>Seleksi Penerimaan</span></a></li>
                 <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-user-circle'></i> <span>Mahasiswa</span></a></li>

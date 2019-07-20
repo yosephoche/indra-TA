@@ -24,7 +24,7 @@ class JurusanKelasController extends Controller
         $tahunajarans = TahunAjaran::all();
         $tahunajaran = TahunAjaran::orderBy('created_at','asc')->first();
     	$jurusans = Jurusan::all();
-    	$kelas = $tahunajaran->kelas;
+        $kelas = $tahunajaran->kelas;
     	return view('pages.admin.jurusankelas.index', compact('tahunajarans','jurusans','kelas','tahunajaran'));
     }
 
