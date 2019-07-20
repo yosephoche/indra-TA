@@ -17,7 +17,7 @@ class CreateCalonSiswasTable extends Migration
             // $table->increments('id');
             $table->string('no_pendf',10)->primary(); //PK
             $table->unsignedInteger('id_user')->unique(); // ID Users // FK
-            $table->string('kd_jurusan', 3); //  Kode Jurusan // FK
+            $table->string('kd_jurusan', 3)->nullable(); //  Kode Jurusan // FK
             $table->unsignedInteger('id_jadwal'); // ID Jadwal // FK
             $table->string('kd_kelas', 4)->nullable();
             $table->string('nm_cln_siswa', 20);
@@ -29,7 +29,7 @@ class CreateCalonSiswasTable extends Migration
             $table->string('alamat', 120);
             $table->string('nm_ortu', 20);
             $table->string('pkrj_ortu', 50);
-            $table->integer('gaji_ortu');
+            $table->string('gaji_ortu');
             $table->string('sklh_asal', 200);
             $table->enum('status_tes',['sudah','belum'])->default('belum');
             $table->enum('status_pembayaran',['sudah','belum'])->default('belum');

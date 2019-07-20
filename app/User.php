@@ -49,4 +49,5 @@ class User extends Authenticatable
     public function panitia(){
         return $this->hasOne(Panitia::class,'id_user','id_user');
     }
+
 }

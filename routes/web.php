@@ -40,7 +40,18 @@ Route::get('test', function(){
 	dd(bcrypt('(*#&42#4(*&))'));
 });
 
-Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin']], function(){
+Route::group(['prefix' => 'coba','middleware' => ['admin:admin,superadmin']], function () {
+	Route::get('/', function () {
+		dd('i am here');
+	});
+
+	Route::get('/disini', function () {
+		dd('i am here 2');
+	})->middleware('admin:superadmin');
+});
+
+Route::get('/admin','Admin\AdminController@index')->name('indexAdmin');
+Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin,admin']], function(){
 	Route::prefix('profile')->group(function(){
 		Route::get('/','Admin\ProfilController@index')->name('indexProfileAdmin');
 		Route::get('edit','Admin\ProfilController@edit')->name('editProfileAdmin');
@@ -55,7 +66,6 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin
 		Route::get('/search/{id}','Admin\TahunAjaranController@search')->name('searchTahunAjaranAdmin');
 		// Route::get('detail','Admin\TahunAjaranControllern@index')->name('detailTahunAjaranAdmin');
 	});
-	Route::get('/','Admin\AdminController@index')->name('indexAdmin');
 
 	Route::prefix('pendaftaran')->group(function(){
 		Route::get('/{id_jadwal?}','Admin\PendaftaranController@index')->name('indexPendaftaranAdmin');
@@ -169,7 +179,17 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin, admin
 	});
 });
 
-
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:pimpinan']], function () {
+	Route::prefix('laporan')->group(function () {
+		Route::get('/', 'Admin\LaporanController@index')->name('indexLaporan');
+		// Route::get('add', 'Admin\JadwalController@add')->name('addJadwalAdmin');
+		// Route::post('add', 'Admin\JadwalController@postAdd')->name('postAddJadwalAdmin');
+		// Route::get('edit/{id}', 'Admin\JadwalController@edit')->name('editJadwalAdmin');
+		// Route::post('update', 'Admin\JadwalController@update')->name('updateJadwalAdmin');
+		// Route::get('detail/{id}', 'Admin\JadwalController@detail')->name('detailJadwalAdmin');
+		// Route::post('delete', 'Admin\JadwalController@delete')->name('postDeleteJadwalAdmin');
+	});
+});
 // Route::prefix('/siswa')->group(function(){
 Route::group(['prefix'=>'siswa', 'middleware' => ['auth','role:siswa']], function(){
 	// Route::get('/','Siswa\SiswaController@index')->name('indexSiswa');
