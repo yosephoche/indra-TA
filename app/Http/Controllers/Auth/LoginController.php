@@ -42,7 +42,7 @@ class LoginController extends Controller
     public function authenticated()
     {
         if (Auth::user()) {
-            return redirect(route('indexAdmin'));
+            return redirect('/admin');
         }
 
         return redirect(route('logout'));

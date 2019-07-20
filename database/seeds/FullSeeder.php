@@ -15,6 +15,7 @@ use App\Pertanyaan;
 use App\PilihanJawaban;
 
 use Carbon\Carbon;
+use Faker\Factory as Faker;
 
 class FullSeeder extends Seeder
 {
@@ -25,6 +26,7 @@ class FullSeeder extends Seeder
      */
     public function run()
     {
+		$faker = Faker::create('id_ID');
 
     	$role = new Role();
     	$role->name = "admin";
@@ -74,51 +76,100 @@ class FullSeeder extends Seeder
 		$panitia->no_hp = "081519120000";
 		$panitia->save();
 
-    	$id_role_siswa = Role::where('name','siswa')->first()->id_role;
-
     	$data_tahun_ajaran = [
-			['th_ajaran'=>'2017/2018'],
-			['th_ajaran'=>'2018/2019'],
 			['th_ajaran'=>'2019/2020'],
 			['th_ajaran'=>'2020/2021']
 		];
 
-    	foreach ($data_tahun_ajaran as $i=>$data) {
+    	foreach ($data_tahun_ajaran as $i => $data) {
     		$tahunajaran = new TahunAjaran();
     		$tahunajaran -> th_ajaran = $data['th_ajaran'];
-    		$tahunajaran -> created_at = '2018-01-20 20:30:0' . $i;
+    		$tahunajaran -> created_at = Carbon::now();
     		$tahunajaran -> save();
-    	}
+			
+			$jadwal_pendaftaran = new JadwalPendaftaran();
+			$jadwal_pendaftaran->nm_jadwal = "Gelombang ". strval($i+1);
+			$jadwal_pendaftaran->id_th_ajaran = 1;
+			$jadwal_pendaftaran->tgl_mulai_pendf = $faker->dateTimeBetween($startDate='-3 days', $endDate = 'now');
+			$jadwal_pendaftaran->tgl_akhir_pendf = $faker->dateTimeBetween($startDate='+1 week', $endDate = '+1 month');
+			$jadwal_pendaftaran->tgl_mulai_tes = $faker->dateTimeBetween($startDate='+14 days', $endDate = '+17 days');
+			$jadwal_pendaftaran->tgl_akhir_tes = $faker->dateTimeBetween($startDate='+17 days', $endDate = '+19 days');
+			$jadwal_pendaftaran->tgl_hasil_seleksi = $faker->dateTimeBetween($startDate='+20 days', $endDate = '+21 days');
+			$jadwal_pendaftaran->save();
+		}
 
-    	$jadwal_pendaftaran = new JadwalPendaftaran();
-		$jadwal_pendaftaran->nm_jadwal = "Gelombang 1";
-		$jadwal_pendaftaran->id_th_ajaran = 1;
-		$jadwal_pendaftaran->tgl_mulai_pendf = "2017-01-1";
-		$jadwal_pendaftaran->tgl_akhir_pendf = "2017-01-6";
-		$jadwal_pendaftaran->tgl_mulai_tes = "2017-01-8";
-		$jadwal_pendaftaran->tgl_akhir_tes = "2017-01-11";
-		$jadwal_pendaftaran->tgl_hasil_seleksi = "2017-01-13";
-    	$jadwal_pendaftaran->save();
 
-    	$jadwal_pendaftaran = new JadwalPendaftaran();
-		$jadwal_pendaftaran->nm_jadwal = "Gelombang 2";
-		$jadwal_pendaftaran->id_th_ajaran = 1;
-		$jadwal_pendaftaran->tgl_mulai_pendf = "2017-01-15";
-		$jadwal_pendaftaran->tgl_akhir_pendf = "2017-01-27";
-		$jadwal_pendaftaran->tgl_mulai_tes = "2017-01-18";
-		$jadwal_pendaftaran->tgl_akhir_tes = "2017-01-19";
-		$jadwal_pendaftaran->tgl_hasil_seleksi = "2017-01-20";
-    	$jadwal_pendaftaran->save();
+		$id_role_siswa = Role::where('name', 'siswa')->first()->id_role;
+		$id_jadwal = JadwalPendaftaran::first()->id_jadwal;
+		$limit = 5;
+		for ($i = 1; $i < $limit; $i++) {
+			$count_pendaftaran = CalonSiswa::count();
+			$no_pendaftaran = "DF" . date("y-") . (sprintf('%05d', $count_pendaftaran + 1));
 
-    	$jadwal_pendaftaran = new JadwalPendaftaran();
-		$jadwal_pendaftaran->nm_jadwal = "Gelombang 1";
-		$jadwal_pendaftaran->id_th_ajaran = 2;
-		$jadwal_pendaftaran->tgl_mulai_pendf = "2018-02-08";
-		$jadwal_pendaftaran->tgl_akhir_pendf = "2018-02-11";
-		$jadwal_pendaftaran->tgl_mulai_tes = "2018-02-12";
-		$jadwal_pendaftaran->tgl_akhir_tes = "2018-02-14";
-		$jadwal_pendaftaran->tgl_hasil_seleksi = "2018-02-15";
-    	$jadwal_pendaftaran->save();
+			$user = new User();
+			$email = $faker->email;
+			$user->email = $email;
+			$user->password = bcrypt($email);
+			$user->id_role = $id_role_siswa;
+			$user->save();
+
+			$calon_siswa = new CalonSiswa();
+
+			$calon_siswa->no_pendf = $no_pendaftaran;
+			$calon_siswa->id_user = $user->id_user;
+			// $calon_siswa->kd_jurusan = $faker->randomElement($array = array('HKM', 'TTH'));
+			$calon_siswa->id_jadwal = $id_jadwal;
+			$calon_siswa->nm_cln_siswa = $faker->firstName;
+			$calon_siswa->nisn = $faker->numberBetween($min = 100000, $max = 99999);
+			$calon_siswa->jns_kelamin = $faker->randomElement($array = array('l', 'p'));
+			$calon_siswa->tmp_lahir = $faker->randomElement($array = array('Klaten', 'Jogja', 'Solo', 'Semarang', 'Jakarta'));
+			$calon_siswa->tgl_lahir = Carbon::now();
+			$calon_siswa->agama = $faker->randomElement($array = array('islam', 'kristen', 'katolik', 'hindu', 'budha'));
+			$calon_siswa->alamat = $faker->streetAddress;
+			$calon_siswa->nm_ortu = $faker->firstName;
+			$calon_siswa->pkrj_ortu = $faker->randomElement($array = array('PNS', 'Wiraswasta', 'TNI/POLRI', 'Lainnya'));
+			$calon_siswa->gaji_ortu = $faker->randomElement($array = ['1000000 - 2000000', '2600000 - 4000000', '> 4000000']);
+			$calon_siswa->sklh_asal = $faker->randomElement($array = array('SMA N 1 JAKARTA', 'SMA N 2 JAKARTA', 'SMA N 3 JAKARTA', 'SMA N 4 JAKARTA'));
+			$calon_siswa->save();
+		}
+
+		$data_jurusan = [
+			[
+				'kd_jurusan' => 'HKM',
+				'nm_jurusan' => 'Pendidikan Hukum'
+			],
+			[
+				'kd_jurusan' => 'HK',
+				'nm_jurusan' => 'Hukum'
+			],
+		];
+		foreach ($data_jurusan as $data) {
+			$jurusan = new Jurusan();
+			$jurusan->kd_jurusan = $data['kd_jurusan'];
+			$jurusan->nm_jurusan = $data['nm_jurusan'];
+			$jurusan->save();
+		}
+
+
+    	// $jadwal_pendaftaran = new JadwalPendaftaran();
+		// $jadwal_pendaftaran->nm_jadwal = "Gelombang 2";
+		// $jadwal_pendaftaran->id_th_ajaran = 1;
+		// $jadwal_pendaftaran->tgl_mulai_pendf = "2017-01-15";
+		// $jadwal_pendaftaran->tgl_akhir_pendf = "2017-01-27";
+		// $jadwal_pendaftaran->tgl_mulai_tes = "2017-01-18";
+		// $jadwal_pendaftaran->tgl_akhir_tes = "2017-01-19";
+		// $jadwal_pendaftaran->tgl_hasil_seleksi = "2017-01-20";
+    	// $jadwal_pendaftaran->save();
+
+    	// $jadwal_pendaftaran = new JadwalPendaftaran();
+		// $jadwal_pendaftaran->nm_jadwal = "Gelombang 1";
+		// $jadwal_pendaftaran->id_th_ajaran = 2;
+		// $jadwal_pendaftaran->tgl_mulai_pendf = "2018-02-08";
+		// $jadwal_pendaftaran->tgl_akhir_pendf = "2018-02-11";
+		// $jadwal_pendaftaran->tgl_mulai_tes = "2018-02-12";
+		// $jadwal_pendaftaran->tgl_akhir_tes = "2018-02-14";
+		// $jadwal_pendaftaran->tgl_hasil_seleksi = "2018-02-15";
+    	// $jadwal_pendaftaran->save();
 
     }
 } 

@@ -73,8 +73,8 @@ class LandingController extends Controller
     	return view('pages.landing.pendaftaran2', compact('jurusans','jadwal'));
     }
 
-    public function postPendaftaran(Request $req){
-        // dd($req);
+    public function postPendaftaran(Request $req)
+    {
         $id_role = Role::where('name','siswa')->first()->id_role;
 
         $user = new User();

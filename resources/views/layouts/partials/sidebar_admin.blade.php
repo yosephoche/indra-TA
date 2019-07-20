@@ -23,7 +23,7 @@
                     <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexUserAdmin') }}"><i class='fa fa-user'></i> <span>User Management</span></a></li>
                 @endif
             @else
-                <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexUserAdmin') }}"><i class='fa fa-file'></i> <span>Laporan</span></a></li>                
+                <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexLaporan') }}"><i class='fa fa-file'></i> <span>Laporan</span></a></li>                
             @endif
             
         </ul><!-- /.sidebar-menu -->
