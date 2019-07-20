@@ -61,7 +61,7 @@
                                 <div class="col-md-3 col-md-offset-9">
                                     <div class="form-group">
                                         <div class="input-group input-group-sm">
-                                            <input id="search_val" type="text" class="form-control" placeholder="ex: Wahyu Sigit">
+                                            <input id="search_val" type="text" class="form-control" placeholder="">
                                             <span class="input-group-btn">
                                             <button id="search" type="button" class="btn btn-info btn-flat">Cari</button>
                                             </span>
@@ -130,7 +130,7 @@
                                 <div class="col-md-3 col-md-offset-9">
                                     <div class="form-group">
                                         <div class="input-group input-group-sm">
-                                            <input id="search_val" type="text" class="form-control" placeholder="ex: Wahyu Sigit">
+                                            <input id="search_val" type="text" class="form-control" placeholder="">
                                             <span class="input-group-btn">
                                             <button id="search" type="button" class="btn btn-info btn-flat">Cari</button>
                                             </span>

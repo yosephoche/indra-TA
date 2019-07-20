@@ -29,13 +29,13 @@
 {{-- <div id="intro" class="box">
     <div class="container">
         <div class="row">
-            <h1 class="text-center">Sekilas Tentang SMK Kami,</h1>
+            <h1 class="text-center">Sekilas Tentang Kampus Kami</h1>
             <div class="col-md-6">
                 <img src="http://psb.smktelkom-mlg.sch.id/f_images/smk2.png" class="img-responsive">
             </div>
-            <div class="col-md-6 h4" style="line-height: inherit">
+           <!--  <div class="col-md-6 h4" style="line-height: inherit">
                 SMK Telkom Malang adalah pelopor Sekolah Menengah Kejuruan pertama bidang informatika di Indonesia, berpengalaman dari tahun 1992 yang telah terakreditasi “A” dan mempunyai standar mutu ISO 9001:2008
-            </div>
+            </div> -->
             <br>
             <br>
         </div>

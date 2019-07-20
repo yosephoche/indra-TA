@@ -30,7 +30,7 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">Selamat Datang - Calon Siswa</li>
+            <li class="header">Selamat Datang - Calon Mahasiswa</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ Request::is('siswa/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranSiswa') }}"><i class='fa fa-book'></i> <span>Data Pendaftaran</span></a></li>
             <li class="{{ Request::is('siswa/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranSiswa') }}"><i class='fa fa-credit-card'></i> <span>Konfirmasi Pembayaran</span></a></li>

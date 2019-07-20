@@ -201,7 +201,9 @@
                             <label class="col-sm-4 control-label">Password</label>
                             <div class="col-sm-8">
                                 <input type="password" class="form-control" name="password" required="required">
+                                <h5><b>*Data login akan anda gunakan untuk masuk ke halaman selanjutnya, harap ingat email dan password anda*</b></h5>
                             </div>
+
                         </div>
                     </div>
                     <div class="box-footer">

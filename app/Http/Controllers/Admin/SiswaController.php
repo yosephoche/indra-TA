@@ -16,7 +16,7 @@ class SiswaController extends Controller
 {
     public function index(){
     	$tahunajarans = TahunAjaran::all();
-        $tahunajaran = TahunAjaran::where('th_ajaran','2018/2019')->first();
+        $tahunajaran = TahunAjaran::where('th_ajaran','2019/2020')->first();
    		$id_th_ajaran = $tahunajaran->id_th_ajaran;
 		$siswas = DB::table('tahun_ajarans')
     				->join('jadwal_pendaftarans','jadwal_pendaftarans.id_th_ajaran','tahun_ajarans.id_th_ajaran')

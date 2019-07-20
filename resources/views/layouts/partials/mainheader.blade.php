@@ -2,9 +2,9 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="{{ route('indexAdmin') }}" class="logo">
+    <a href="{{ route('indexPendaftaranSiswa') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>PMB</b></span>
+        <!-- <span class="logo-mini"><b>PMB</b></span> -->
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>PMB</b>STIH</span>
     </a>

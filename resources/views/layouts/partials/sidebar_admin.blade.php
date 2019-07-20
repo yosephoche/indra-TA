@@ -5,16 +5,16 @@
     <section class="sidebar">
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">Selamat Datang - Panitia</li>
+            <li class="header">Selamat Datang Panitia PMB</li>
             <!-- Optionally, you can add icons to the links -->
 
             <!-- Baru -->
             {{-- <li><a href="{{ route('indexAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Home</span></a></li> --}}
             <li class="{{ Request::is('admin/profile*') ? 'active' : '' }}"><a href="{{ route('indexProfileAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Admin</span></a></li>
-            <li class="{{ Request::is('admin/jurusankelas*') ? 'active' : '' }}"><a href="{{ route('indexJurusanKelasAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Jurusan & Kelas</span></a></li>
-            <li class="{{ Request::is('admin/jadwal*') ? 'active' : '' }}"><a href="{{ route('indexJadwalAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Jadwal</span></a></li>
-            <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Pendaftaran</span></a></li>
-            <li class="{{ Request::is('admin/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Pembayaran</span></a></li>
+            <li class="{{ Request::is('admin/jurusankelas*') ? 'active' : '' }}"><a href="{{ route('indexJurusanKelasAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Jurusan & Kelas</span></a></li>
+            <li class="{{ Request::is('admin/jadwal*') ? 'active' : '' }}"><a href="{{ route('indexJadwalAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Jadwal Pendaftaran</span></a></li>
+            <!-- <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Pendaftar</span></a></li> -->
+            <li class="{{ Request::is('admin/pembayaran*') ? 'active' : '' }}"><a href="{{ route('indexPembayaranAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Pembayaran</span></a></li>
 
             {{-- Tambah Menu Tes Seleksi --}}
             <li>
@@ -28,7 +28,7 @@
             </li>
 
             <li class="{{ Request::is('admin/seleksipenerimaan*') ? 'active' : '' }}"><a href="{{ route('indexSeleksiPenerimaanAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Seleksi Penerimaan</span></a></li>
-            <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Mahasiswa</span></a></li>
+            <li class="{{ Request::is('admin/siswa*') ? 'active' : '' }}"><a href="{{ route('indexSiswaAdmin') }}"><i class='fa fa-circle-thin'></i> <span>Data Calon Mahasiswa</span></a></li>
 
             @if (Auth::user()->hasRole('superadmin'))
                 <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexUserAdmin') }}"><i class='fa fa-user'></i> <span>User Management</span></a></li>
