@@ -3,7 +3,7 @@
     {{ trans('Informasi dan Jadwal') }}
 @endsection
 @section('main-content')
-    @isset($jadwal_terbuka)
+    @if(!empty($jadwal_terbuka))
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    @endisset
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-12">

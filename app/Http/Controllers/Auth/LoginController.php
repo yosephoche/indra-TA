@@ -45,6 +45,10 @@ class LoginController extends Controller
             return redirect('/admin');
         }
 
+        if (Auth::user()->hasRole('siswa')) {
+            return redirect(route('indexPendaftaranSiswa'));
+        }
+
         return redirect(route('logout'));
 
         // if (Auth::user()->hasRole('siswa')) {
