@@ -15,4 +15,10 @@ class LaporanController extends Controller
 
         return view('pages.admin.laporan.index', compact('calon_siswa'));
     }
+
+    public function cetak()
+    {
+        $calon_siswa = CalonSiswa::with('jadwal', 'kelas', 'jurusan')->get();
+        return view('pages.print.laporan', compact('calon_siswa'));
+    }
 }

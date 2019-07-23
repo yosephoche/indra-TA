@@ -9,7 +9,7 @@
     		<div class="box-header with-border">
     			<div class="box-title"><i class="fa fa-calendar"></i>  Laporan Data Calon Mahasiswa STIH DAMARICA PALOPO</div>
                 <div class="box-tools pull-right">
-                    {{-- <a href="{{ route('addJadwalAdmin') }}" type="button" class="btn btn-default btn-flat btn-sm"><i class="fa fa-plus"></i>Tambah Jadwal</a> --}}
+                    <a href="{{ route('cetakLaporan') }}" type="button" class="btn btn-default btn-flat btn-sm"><i class="fa fa-plus"></i> Cetak Laporan</a>
                 </div>
     		</div>
     		<div class="box-body">

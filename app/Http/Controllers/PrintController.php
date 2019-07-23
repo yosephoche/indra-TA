@@ -70,5 +70,6 @@ class PrintController extends Controller
 		$qr->save();
 
 		return $image_data;
-    }
+	}
+
 }

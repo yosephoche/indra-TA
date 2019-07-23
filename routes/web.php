@@ -182,6 +182,7 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin,admin'
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:pimpinan']], function () {
 	Route::prefix('laporan')->group(function () {
 		Route::get('/', 'Admin\LaporanController@index')->name('indexLaporan');
+		Route::get('/cetak', 'Admin\LaporanController@cetak')->name('cetakLaporan');
 		// Route::get('add', 'Admin\JadwalController@add')->name('addJadwalAdmin');
 		// Route::post('add', 'Admin\JadwalController@postAdd')->name('postAddJadwalAdmin');
 		// Route::get('edit/{id}', 'Admin\JadwalController@edit')->name('editJadwalAdmin');
