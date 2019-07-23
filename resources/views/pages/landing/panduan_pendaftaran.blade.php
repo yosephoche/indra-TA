@@ -49,7 +49,7 @@
         <div class="timeline-body">
           <p>Setelah Calon Mahasiswa melakukan Transfer Pembayaran, selanjutnya Calon Mahasiswa diharapkan melakukan Konfirmasi Pembayaran dan kemudian menunggu Verifikasi Pembayaran dari Panitia. Biasanya pada langkah ini membutuhkan waktu paling lambat 2x24 jam karena Verifikasi Pembayaran masih dilakukan secara Manual.</p>
           <hr>
-          <a href="{{ route('konfirmasiPembayaranSiswa') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman.</a>
+          <a href="{{ route('indexPembayaranSiswa') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right"></i> Menuju Halaman.</a>
         </div>
       </div>
     </li>
