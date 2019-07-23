@@ -110,8 +110,26 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Penghasilan</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" name="gaji_ortu" required="required" value="{{ $calonsiswa->gaji_ortu }}">
+                            <div class="col-sm-6">
+                                {{-- <input type="text" class="form-control" name="gaji_ortu" required="required" value="{{ $calonsiswa->gaji_ortu }}"> --}}
+                                <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="1000000 - 2000000" {{ ($calonsiswa->gaji_ortu == "1000000 - 2000000") ? "checked":"" }}>
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        Rp. 1.000.000 - Rp. 2.500.000
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="2600000 - 4000000" {{ ($calonsiswa->gaji_ortu == "2600000 - 4000000") ? "checked":"" }}>
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        Rp. 2.600.000 - Rp. 4.000.000
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-control-input" type="radio" name="gaji_ortu" id="exampleRadios1" value="> 4000000" {{ ($calonsiswa->gaji_ortu == "> 4000000") ? "checked":"" }} >
+                                    <label class="form-control-label" for="exampleRadios1">
+                                        > Rp. 4.000.000
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -367,24 +385,24 @@
                         }
                     }
                 },
-                gaji_ortu: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Gaji Orang Tua / Wali tidak boleh kosong'
-                        },
-                        between: {
-                            min: 100000,
-                            max: 9999999,
-                            message: 'Harap masukkan dengan benar'
-                        },
-                        numeric: {
-                            message: 'The value is not a number',
-                            // The default separators
-                            thousandsSeparator: '.',
-                            decimalSeparator: ','
-                        }
-                    }
-                },
+                // gaji_ortu: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Gaji Orang Tua / Wali tidak boleh kosong'
+                //         },
+                //         between: {
+                //             min: 100000,
+                //             max: 9999999,
+                //             message: 'Harap masukkan dengan benar'
+                //         },
+                //         numeric: {
+                //             message: 'The value is not a number',
+                //             // The default separators
+                //             thousandsSeparator: '.',
+                //             decimalSeparator: ','
+                //         }
+                //     }
+                // },
                 sklh_asal: {
                     validators: {
                         notEmpty: {
