@@ -44,7 +44,8 @@
                             <td class="text-center">
                                 <a href="{{ route('detailUserAdmin', $panitia->nip) }}" class="btn btn-default btn-flat btn-sm"><i class="fa fa-folder-open"></i></a>
                                 <a href="{{ route('editUserAdmin', $panitia->nip) }}" class="btn btn-primary btn-flat btn-sm"><i class="fa fa-edit"></i></a>
-                                <a href="{{ route('deleteUserAdmin', $panitia->nip) }}" class="btn btn-danger btn-flat btn-sm btn_delete"><i class="fa fa-trash"></i></a> 
+                                <a href="{{ route('deleteUserAdmin', $panitia->nip) }}" class="btn btn-danger btn-flat btn-sm btn_delete"><i class="fa fa-trash"> </i></a> 
+                                
                             </td>
                         </tr>
                         @endforeach
@@ -56,6 +57,34 @@
     	</div>
     	
     </div>
+</div>
+
+
+{{-- Modal Dialog Hapus Jadwal --}}
+<div id="modalDeleteJadwal" class="modal modal-danger fade">
+    <div class="modal-dialog">
+        <form action="{{ route('deleteUserAdmin') }}" method="POST">
+        {{ csrf_field() }}
+        <input id="id_jadwal_delete" type="hidden" name="id_user">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Hapus User</h4>
+            </div>
+            <div class="modal-body">
+                <p>Anda yakin menghapus data ini?</p>
+                <!-- <p>Jika data penjadwalan dihapus maka data pendaftaran yang terdaftar pada penjadwalan juga terhapus</p> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left btn-flat" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-trash"></i>   Hapus</button>
+            </div>
+        </div>
+        </form>
+    <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
 
 @endsection
