@@ -44,8 +44,9 @@
                             <td class="text-center">
                                 <a href="{{ route('detailUserAdmin', $panitia->nip) }}" class="btn btn-default btn-flat btn-sm"><i class="fa fa-folder-open"></i></a>
                                 <a href="{{ route('editUserAdmin', $panitia->nip) }}" class="btn btn-primary btn-flat btn-sm"><i class="fa fa-edit"></i></a>
-                                <a href="{{ route('deleteUserAdmin', $panitia->nip) }}" class="btn btn-danger btn-flat btn-sm btn_delete"><i class="fa fa-trash"> </i></a> 
-                                
+                                {{-- <a href="{{ route('deleteUserAdmin', $panitia->id_user) }}" class="btn btn-danger btn-flat btn-sm btn_delete"><i class="fa fa-trash"> </i></a>  --}}
+                                <button value="{{ $panitia->id_user }}" class="btn btn-danger btn-flat btn-sm btn_delete" data-toggle="modal" data-target="#modalDeleteJadwal">
+                                    <i class="fa fa-trash"> </i></button>
                             </td>
                         </tr>
                         @endforeach
@@ -94,7 +95,7 @@
 @push('script')
 <script type="text/javascript">
     $('body').on('click','.btn_delete', function(){
-        // console.log(this.value);
+        console.log(this.value);
         $('#id_jadwal_delete').val(this.value);
     });
 </script>
