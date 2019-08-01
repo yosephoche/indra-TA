@@ -72,4 +72,11 @@ class UserController extends Controller
 
     	return redirect(route('indexUserAdmin'));
     }
+
+    public function delete(Request $req)
+    {
+        $user = User::where('id_user', $req->id_user)->delete();
+        $panitia = Panitia::where('id_user', $req->id_user)->delete();
+        return redirect(route('indexUserAdmin'));
+    }
 }

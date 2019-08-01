@@ -42,7 +42,7 @@
                             <td class="text-center">
                                 <a href="{{ route('detailUserAdmin', $panitia->nip) }}" class="btn btn-default btn-flat btn-sm"><i class="fa fa-folder-open"></i></a>
                                 <a href="{{ route('editUserAdmin', $panitia->nip) }}" class="btn btn-primary btn-flat btn-sm"><i class="fa fa-edit"></i></a>
-                                <button value="{{ $panitia->nip }}" class="btn btn-danger btn-flat btn-sm btn_delete" data-toggle="modal" data-target="#modalDeleteJadwal">
+                                <button value="{{ $panitia->id_user }}" class="btn btn-danger btn-flat btn-sm btn_delete" data-toggle="modal" data-target="#modalDeleteJadwal">
                                     <i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
@@ -61,9 +61,9 @@
 {{-- Modal Dialog Hapus Jadwal --}}
 <div id="modalDeleteJadwal" class="modal modal-danger fade">
     <div class="modal-dialog">
-        <form action="{{ route('postDeleteJadwalAdmin') }}" method="POST">
+        <form action="{{ route('deleteUserAdmin') }}" method="POST">
         {{ csrf_field() }}
-        <input id="id_jadwal_delete" type="hidden" name="id_jadwal">
+        <input id="id_jadwal_delete" type="hidden" name="id_user">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

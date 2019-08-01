@@ -115,7 +115,7 @@
                             <td class="text-center">{{ $no+1 }}</td>
                             <td class="text-uppercase">{{ $kls->kd_kelas }}</td>
                             <td class="text-capitalize">{{ $kls->jurusan->nm_jurusan }}</td>
-                            <td class="text-capitalize">{{ $kls->nm_kelas }} - ({{ $kls->siswa->count() }} Siswa)</td>
+                            <td class="text-capitalize">{{ $kls->nm_kelas }}</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="{{ route('indexKelasAdmin', $kls->kd_kelas) }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-folder-open"></i></a>
@@ -287,7 +287,7 @@
                     <label>Pilih Jurusan</label>
                     <select id="inp_kd_jurusan_kls" class="form-control" name="kd_jurusan">
                         @foreach($jurusans as $jurusan)
-                            <option value="{{ $jurusan->kd_jurusan }}">{{ $jurusan->kd_jurusan }}</option>
+                            <option value="{{ $jurusan->kd_jurusan }}">{{ $jurusan->nm_jurusan }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -387,6 +387,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $("body").on("click",".btnedit_kelas", function(){
+                $("#inp_nm_kelas").val('');
                 vall = $(this).closest('tr').find('td');
                 option_html = '<option value="' + vall[2].textContent + '" selected>' + vall[2].textContent + '</option>';
                 $("#inp_kd_jurusan_kls").append(option_html);

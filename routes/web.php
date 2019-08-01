@@ -175,7 +175,7 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','role:superadmin,admin'
 		Route::get('/detail/{nip}', 'Admin\UserController@detail')->name('detailUserAdmin');
 		Route::get('/edit/{nip}', 'Admin\UserController@edit')->name('editUserAdmin');
 		Route::post('/update', 'Admin\UserController@update')->name('updateUserAdmin');
-		Route::post('/delete/{nip}', 'Admin\UserController@delete')->name('deleteUserAdmin');
+		Route::post('/delete', 'Admin\UserController@delete')->name('deleteUserAdmin');
 	});
 });
 

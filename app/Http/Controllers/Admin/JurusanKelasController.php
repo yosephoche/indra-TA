@@ -72,6 +72,7 @@ class JurusanKelasController extends Controller
     }
 
     public function postUpdateKelas(Request $req){
+        dd($req->kd_jurusan);
         $kelas = Kelas::find($req->kd_kelas);
         $kelas->kd_jurusan = $req->kd_jurusan;
         $kelas->nm_kelas = $req->nm_kelas;
