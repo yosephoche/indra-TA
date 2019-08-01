@@ -10,13 +10,13 @@
 
     	<div class="box">
     		<div class="box-header with-border">
-    			<div class="box-title"><i class="fa fa-plus"></i>  Tambah Jadwal Pendaftaran</div>
+    			<div class="box-title"><i class="fa fa-plus"></i>	Tambah Jadwal Pendaftaran</div>
     		</div>
     		<div class="box-body">
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Nama Jadwal : </label>
-    					<input type="text" name="nama_jadwal_pendf" class="form-control text-capitalize" required="required" placeholder="ex: Gelombang 1">
+    					<input type="text" maxlength="14" name="nama_jadwal_pendf" class="form-control text-capitalize" required="required" placeholder="ex: Gelombang 1">
 					</div>
 					<div class="form-group">
 						<label>Tahun Ajaran</label>

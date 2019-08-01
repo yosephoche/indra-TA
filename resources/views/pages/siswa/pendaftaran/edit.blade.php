@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat lengkap</label>
                             <div class="col-sm-8">
-                                <textarea id="alamat_sekolah_asal" name="alamat" class="form-control" rows="5" required="required">{{ $calonsiswa->alamat }}</textarea>
+                                <textarea id="alamat_sekolah_asal" maxlength="45" name="alamat" class="form-control" rows="5" required="required">{{ $calonsiswa->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -99,13 +99,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Nama Lengkap</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="nm_ortu" required="required" value="{{ $calonsiswa->nm_ortu }}">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="nm_ortu" required="required" value="{{ $calonsiswa->nm_ortu }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Pekerjaan</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control text-capitalize" name="pkrj_ortu" required="required" value="{{ $calonsiswa->pkrj_ortu }}">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="pkrj_ortu" required="required" value="{{ $calonsiswa->pkrj_ortu }}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -144,7 +144,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Sekolah Asal</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="sklh_asal" required="required" value="{{ $calonsiswa->sklh_asal }}">
+                                <input type="text" maxlength="30" class="form-control text-capitalize" name="sklh_asal" required="required" value="{{ $calonsiswa->sklh_asal }}">
                             </div>
                         </div>
                     </div>
@@ -159,14 +159,14 @@
                         <div class="form-group">
                             <label for="inputEmail" class="col-sm-4 control-label">E-Mail</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="email" required="required" value="{{ $calonsiswa->user->email }}">
+                                <input type="text" maxlength="30" class="form-control" name="email" required="required" value="{{ $calonsiswa->user->email }}">
                             </div>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">Password Baru</label>
                             <div class="col-xs-5">
-                                <input id="password" type="password" class="form-control password" name="password" readonly="readonly">
+                                <input id="password" maxlength="15" type="password" class="form-control password" name="password" readonly="readonly">
                             </div>
                             <div class="col-md-3 row">
                                 <button id="new_password" type="button" class="btn btn-default btn-flat" value="0">Password Baru</button>

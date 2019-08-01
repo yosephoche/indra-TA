@@ -56,7 +56,7 @@
                                     <td class="text-center">{{ $siswa->nm_cln_siswa }}</td>
                                     <td class="text-center">{{ $siswa->alamat }}</td>
                                     <td class="text-center">{{ (is_null($siswa->jurusan)) ? "-":$siswa->jurusan->nm_jurusan }}</td>
-                                    <td class="text-center">{{ $siswa->status_penerimaan }}</td>
+                                    <td class="text-center">{{ (is_null($siswa->status_penerimaan)) ? "-":$siswa->status_penerimaan }}</td>
                                     <td class="text-center">{{ (is_null($siswa->kelas)) ? "-":$siswa->kelas->nm_kelas }}</td>
                                     <td class="text-center">{{ $siswa->jadwal->nm_jadwal }}</td>
                                     {{-- <td class="text-center">

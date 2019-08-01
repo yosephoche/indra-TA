@@ -118,7 +118,7 @@
                             <td class="text-capitalize">{{ $kls->nm_kelas }} - ({{ $kls->siswa->count() }} Siswa)</td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="{{ route('indexKelasAdmin', $kls->kd_kelas) }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-folder-open"></i></a>
+                                    <!-- <a href="{{ route('indexKelasAdmin', $kls->kd_kelas) }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-folder-open"></i></a> -->
                                     <button type="button" class="btn btn-primary btn-sm btn-flat btnedit_kelas" data-toggle="modal" data-target="#modalEditKelas"><i class="fa fa-edit"></i></button>
                                     {{-- <a href="{{ route('deleteKelasAdmin', $kls->kd_kelas) }}" class="btn btn-danger btn-sm btn-flat"><i class="fa fa-trash"></i></a> --}}
                                     <button value="{{ $kls->kd_kelas }}" class="btn btn-danger btn-flat btn-sm btn_delete_kelas" data-toggle="modal" data-target="#modalDeleteKelas">
@@ -161,16 +161,16 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Tambah Tahun Ajaran</h4>
+                <h4 class="modal-title">Tambah Jurusan</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label>Kode Jurusan</label>
-                    <input type="text" name="kd_jurusan" class="form-control" placeholder="ex: TKJ" required="required">
+                    <input type="text" maxlength="3" name="kd_jurusan" class="form-control" placeholder="ex: TKJ" required="required">
                 </div>
                 <div class="form-group">
                     <label>Nama Jurusan</label>
-                    <input type="text" name="nm_jurusan" class="form-control" placeholder="ex: Teknik Komputer Jaringan" required="required">
+                    <input type="text" maxlength="25" name="nm_jurusan" class="form-control" placeholder="ex: Teknik Komputer Jaringan" required="required">
                 </div>
                 {{-- <div class="form-group">
                     <label>Daya Tampung</label>
@@ -232,7 +232,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Ubah Kelas</h4>
+                <h4 class="modal-title">Tambah Kelas</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -245,11 +245,11 @@
                 </div>
                 <div class="form-group">
                     <label>Kode Kelas</label>
-                    <input type="text" name="kd_kelas" class="form-control">
+                    <input maxlength="4" type="text" name="kd_kelas" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Nama Kelas</label>
-                    <input type="text" name="nm_kelas" class="form-control">
+                    <input type="text" maxlength="32" name="nm_kelas" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Tahun Ajaran</label>
@@ -284,8 +284,8 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Pilih Jurusan</label>
-                    <select id="inp_kd_jurusan_kls" class="form-control" name="kd_jurusan">
+                    <label>Pilih Kode Jurusan</label>
+                    <select id="inp_kd_jurusan" class="form-control" name="kd_jurusan">
                         @foreach($jurusans as $jurusan)
                             <option value="{{ $jurusan->kd_jurusan }}">{{ $jurusan->kd_jurusan }}</option>
                         @endforeach

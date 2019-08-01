@@ -67,7 +67,7 @@
 									@if($pembayaran->sts_verif == 'sudah')
 									<tr>
 										<th class="col-md-6">Nama Panitia</th>
-										<th class="col-md-6">{{ $pembayaran->panitia->nip }}</th>
+										<th class="col-md-6">{{ $pembayaran->panitia->nm_panitia }}</th>
 									</tr>
 									@endif
 								</thead>

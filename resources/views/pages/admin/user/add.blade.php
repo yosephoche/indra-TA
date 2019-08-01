@@ -11,31 +11,31 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header">
-                        <div class="box-title">Edit Profil Panitia</div>
+                        <div class="box-title">Tambah Admin</div>
                     </div>
                     <div class="box-body form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-4 control-label">NIP</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="nip" required="required">
+                                <input type="text" maxlength="5" class="form-control" name="nip" required="required">
                             </div>
                         </div>
                          <div class="form-group">
                             <label class="col-sm-4 control-label">Nama Lengkap</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="nm_panitia" required="required">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="nm_panitia" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Email</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="email" required="required">
+                                <input type="text" maxlength="25" class="form-control" name="email" required="required">
                             </div>
                         </div>
                          <div class="form-group">
                             <label class="col-sm-4 control-label">Password</label>
                             <div class="col-sm-5">
-                                <input type="password" class="form-control" name="password" required="required">
+                                <input type="password" maxlength="15" class="form-control" name="password" required="required">
                             </div>
                         </div>
                         <div class="form-group">
@@ -73,13 +73,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat lengkap</label>
                             <div class="col-sm-8">
-                                <textarea name="alamat" class="form-control" rows="5" required="required"></textarea>
+                                <textarea name="alamat" maxlength="30" class="form-control" rows="5" required="required"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">No. Handphone</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control text-capitalize" name="no_hp" required="required" >
+                                <input type="text" maxlength="12" class="form-control text-capitalize" name="no_hp" required="required" >
                             </div>
                         </div>
                     </div>

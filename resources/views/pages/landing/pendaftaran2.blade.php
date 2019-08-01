@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 @if (!Auth::check())
                 <div class="callout callout-info">
-                    <h4>Selamat Datang di Halaman Pendaftaran Mahasiswa Baru -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
+                    <h4>Selamat Datang di Halaman Pendaftaran Mahasiswa Baru STIH Damarica Palopo -  <b>{{ $jadwal->nm_jadwal }}</b></h4>
 
                     <p>Silahkan isi semua data yang dibutuhkan, jika mengalami gangguan atau kesulitan dalam melakukan Registrasi / Pendaftaran ini silahkan Hubungi kami. </p>
                 </div>
@@ -106,7 +106,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat lengkap</label>
                             <div class="col-sm-8">
-                                <textarea name="alamat" class="form-control text-capitalize" rows="5" required="required"></textarea>
+                                <textarea name="alamat" maxlength="45" class="form-control text-capitalize" rows="5" required="required"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -133,13 +133,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Nama Lengkap</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="nm_ortu" required="required" autocomplete="off">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="nm_ortu" required="required" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Pekerjaan</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control text-capitalize" name="pkrj_ortu" required="required" autocomplete="off">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="pkrj_ortu" required="required" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group">
@@ -178,7 +178,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Sekolah Asal</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="sklh_asal" required="required" autocomplete="off">
+                                <input type="text" maxlength="30" class="form-control text-capitalize" name="sklh_asal" required="required" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -193,14 +193,14 @@
                         <div class="form-group">
                             <label for="inputEmail" class="col-sm-4 control-label">E-Mail</label>
                             <div class="col-sm-8">
-                                <input id="inputEmail"  type="text" class="form-control" name="email" required="required" data-error="Penulisan Email salah, Silahkan periksa kembali" autocomplete="off">
+                                <input id="inputEmail" maxlength="30" type="text" class="form-control" name="email" required="required" data-error="Penulisan Email salah, Silahkan periksa kembali" autocomplete="off">
                             </div>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Password</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" name="password" required="required">
+                                <input type="password" maxlength="15" class="form-control" name="password" required="required">
                                 <h5><b>*Data login akan anda gunakan untuk masuk ke halaman selanjutnya, harap ingat email dan password anda*</b></h5>
                             </div>
 

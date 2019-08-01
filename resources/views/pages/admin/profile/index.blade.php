@@ -15,13 +15,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">NIP</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="nip" required="required" value="{{ $panitia->nip }}" readonly="readonly">
+                                <input type="text" class="form-control" name="nip" maxlength="5" required="required" value="{{ $panitia->nip }}" readonly="readonly">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Nama Lengkap</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="nm_panitia" required="required" value="{{ $panitia->nm_panitia }}" readonly="readonly">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="nm_panitia" required="required" value="{{ $panitia->nm_panitia }}" readonly="readonly">
                             </div>
                         </div>
                         <div class="form-group">

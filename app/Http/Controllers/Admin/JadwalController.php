@@ -73,7 +73,7 @@ class JadwalController extends Controller
 		$jadwal->id_th_ajaran = $req->id_th_ajaran;
 		// $jadwal->th_ajaran = $req->th_ajaran;
 		if ($jadwal->save()) {
-			flash('Jadwal pendaftaran berhasil ditambahkan...')->success();
+			flash('Jadwal pendaftaran berhasil diubah...')->success();
 		} else {
 			flash('Terjadi Kesalahan Sistem, Jadwal pendaftaran tidak dapat ditambahkan...')->danger();
 		}

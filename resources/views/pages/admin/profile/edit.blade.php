@@ -17,13 +17,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">NIP</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="nip" required="required" value="{{ $panitia->nip }}" readonly="readonly">
+                                <input type="text" maxlength="5" class="form-control" name="nip" required="required" value="{{ $panitia->nip }}" readonly="readonly">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Nama Lengkap</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control text-capitalize" name="nm_panitia" required="required" value="{{ $panitia->nm_panitia }}">
+                                <input type="text" maxlength="20" class="form-control text-capitalize" name="nm_panitia" required="required" value="{{ $panitia->nm_panitia }}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -56,13 +56,13 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat lengkap</label>
                             <div class="col-sm-8">
-                                <textarea name="alamat" class="form-control" rows="5" required="required">{{ $panitia->alamat }}</textarea>
+                                <textarea name="alamat" maxlength="30" class="form-control" rows="5" required="required">{{ $panitia->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">No. Handphone</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control text-capitalize" name="no_hp" required="required" value="{{ $panitia->no_hp }}">
+                                <input type="text" maxlength="12" class="form-control text-capitalize" name="no_hp" required="required" value="{{ $panitia->no_hp }}">
                             </div>
                         </div>
                     </div>

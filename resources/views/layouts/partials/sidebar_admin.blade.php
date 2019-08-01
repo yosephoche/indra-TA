@@ -5,10 +5,11 @@
     <section class="sidebar">
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">Selamat Datang - {{ Auth::user()->username }}</li>
+            <li class="header">Selamat Datang - <b>Admin</b></li>
 
-            <li class="{{ Request::is('admin/') ? 'active' : '' }}"><a href="{{ route('indexAdmin') }}"><i class='fa fa-dashboard'></i> <span>Data Admin</span></a></li>
+            <li class="{{ Request::is('admin/') ? 'active' : '' }}"><a href="{{ route('indexAdmin') }}"><i class='fa fa-dashboard'></i> <span>Beranda</span></a></li>
             @if (Auth::user()->hasRole('admin'))
+                <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ route('indexProfileAdmin') }}"><i class='fa fa-user-circle'></i> <span>Data Admin</span></a></li>
                 <li class="{{ Request::is('admin/jurusankelas*') ? 'active' : '' }}"><a href="{{ route('indexJurusanKelasAdmin') }}"><i class='fa fa-building-o'></i> <span>Jurusan & Kelas</span></a></li>
                 <li class="{{ Request::is('admin/jadwal*') ? 'active' : '' }}"><a href="{{ route('indexJadwalAdmin') }}"><i class='fa fa-calendar'></i> <span>Jadwal</span></a></li>
                 {{-- <li class="{{ Request::is('admin/pendaftaran*') ? 'active' : '' }}"><a href="{{ route('indexPendaftaranAdmin') }}"><i class='fa fa-pencil'></i> <span>Pendaftaran</span></a></li> --}}

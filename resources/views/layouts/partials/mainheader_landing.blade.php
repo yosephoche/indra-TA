@@ -31,7 +31,7 @@
               @elseif(Auth::user()->hasRole('admin'))
                   <li><a href="{{ route('login') }}"><i class="fa fa-tachometer"></i> Dashboard </a></li>
               @else
-                  <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout </a></li>
+                  <li><a href="{{ route('login') }}"><i class="fa fa-tachometer"></i> Dashboard </a></li>
               @endif
             @endauth
             <ul>
