@@ -20,7 +20,11 @@ class PembayaranController extends Controller
 	        $this->user= Auth::user();
 
 	        return $next($request);
-	    });
+		});
+
+		if (!file_exists(public_path('uploaded'))) {
+			mkdir(public_path('uploaded'), 0777, true);
+		}
 	}
 
 	public function dateFormat($date){
@@ -48,7 +52,17 @@ class PembayaranController extends Controller
     	}
     }
 
-    public function konfirmasiPembayaran(Request $req){
+	public function konfirmasiPembayaran(Request $req)
+	{
+		/*Make directory target*/
+		if (!file_exists(public_path('uploaded/pembayaran'))) {
+			mkdir(public_path('uploaded/pembayaran'), 0777, true);
+		}
+		/*Create random name*/
+		$extension = $req->bukti->getClientOriginalExtension();
+		$file_name = 'pembayaran-'. rand(111111, 999999) . "." . $extension;
+		$req->file('bukti')->move(public_path('uploaded/pembayaran'), $file_name);
+
     	if (is_null($this->user->calonsiswa->pembayaran)) {
     		$pembayaran = new Pembayaran();
 			$pembayaran->no_pemb = $req->no_pemb;
@@ -59,6 +73,7 @@ class PembayaranController extends Controller
 			$pembayaran->cbg_bank = $req->cbg_bank;
 			$pembayaran->tgl_pembayaran = Carbon::now();
 			$pembayaran->sts_verif = 'belum';
+			$pembayaran->bukti = $file_name;
 			$pembayaran->save();
 
             $this->user->calonsiswa->steps->update(['step_2'=>'complete','step_3'=>'active']);

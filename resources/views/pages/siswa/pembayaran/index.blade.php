@@ -10,7 +10,7 @@
             <p>Calon mahasiswa melakukan pembayaran sebesar Rp. 100.000,- melalui Transfer Bank ke Rekening BCA a.n. WAHYU SIGIT - 0918298129 Paling Lambat 2 x 24Jam setelah melakukan Registrasi / Pendaftaran.</p>
         </div>
     </div>
-    <form id="formKonfirmasiPembayaran" class="form-horizontal" action="{{ route('konfirmasiPembayaranSiswa') }}" method="POST">
+    <form id="formKonfirmasiPembayaran" class="form-horizontal" action="{{ route('konfirmasiPembayaranSiswa') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="col-md-6">
             <div class="box">
@@ -52,6 +52,13 @@
                         <label class="col-md-4 control-label">Cabang Bank</label>
                         <div class="col-md-5">
                             <input type="text" name="cbg_bank" class="form-control text-capitalize" value="" required="required">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Upload Bukti Transfer</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="bukti" class="form-control text-capitalize" rows="5" required="required"></textarea>
                         </div>
                     </div>
                 </div>
@@ -134,6 +141,12 @@
                     <div class="col-md-5">
                         <input type="text" name="cbg_bank" class="form-control edit text-capitalize" value="{{ $pembayaran->cbg_bank }}" readonly="readonly">
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Bukti Pembayaran</label>
+                    <img src="{{URL::asset('/uploaded/pembayaran/'.$pembayaran->bukti)}}" alt="foto-pembayaran" width="200">
+                    
                 </div>
             </div>
             <div class="box-footer">

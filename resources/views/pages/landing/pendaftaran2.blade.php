@@ -48,7 +48,7 @@
         <form id="formPendaftaran" role="form" data-toggle="validator" class="form-horizontal" action="{{ route('postPendaftaranHomepage') }}" method="POST" data-bv-message="This value is not valid"
                       data-bv-feedbackicons-valid="fa fa-check"
                       data-bv-feedbackicons-invalid="fa fa-close"
-                      data-bv-feedbackicons-validating="fa fa-refresh">
+                      data-bv-feedbackicons-validating="fa fa-refresh" enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="hidden" name="id_jadwal" value="{{ $jadwal->id_jadwal }}">
         <div class="row">
@@ -117,6 +117,13 @@
                                         <option value="{{ $jurusan->kd_jurusan }}">{{ $jurusan->nm_jurusan }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Upload Foto</label>
+                            <div class="col-sm-8">
+                                <input type="file" name="foto" class="form-control text-capitalize" rows="5" required="required"></textarea>
                             </div>
                         </div>
                     </div>

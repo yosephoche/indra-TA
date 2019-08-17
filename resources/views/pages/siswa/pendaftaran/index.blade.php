@@ -102,8 +102,7 @@
                     <div class="box-footer">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
+
                 <div class="box">
                     <div class="box-header">
                         <div class="box-title">Data Orang Tua / Wali</div>
@@ -131,6 +130,7 @@
                     <div class="box-footer">
                     </div>
                 </div>
+
                 <div class="box">
                     <div class="box-header">
                         <div class="box-title">Data Pendidikan</div>
@@ -142,6 +142,18 @@
                                 <input type="text" class="form-control text-capitalize" name="sklh_asal" required="required" value="{{ $calonsiswa->sklh_asal }}" readonly="readonly">
                             </div>
                         </div>
+                    </div>
+                    <div class="box-footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="box-title">Foto</div>
+                    </div>
+                    <div class="box-body">
+                        <img src="{{URL::asset('/uploaded/siswa/'.$calonsiswa->foto)}}" alt="foto-siswa" width="500">
                     </div>
                     <div class="box-footer">
                     </div>

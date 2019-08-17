@@ -22,6 +22,9 @@ class LandingController extends Controller
 
     public function __construct(){
         $this->carbon = Carbon::now();
+        if (!file_exists(public_path('uploaded'))) {
+            mkdir(public_path('uploaded'), 0777, true);
+        }
     }
 
     public function dateFormat($date){
@@ -75,6 +78,20 @@ class LandingController extends Controller
 
     public function postPendaftaran(Request $req)
     {
+        // dd($req->file('foto'));
+        /*Make directory target*/
+        if (!file_exists(public_path('uploaded/siswa'))) {
+            mkdir(public_path('uploaded/siswa'), 0777, true);
+        }
+        /*Create random name*/
+        $extension = $req->foto->getClientOriginalExtension();
+        $file_name = rand(111111, 999999) . "." . $extension;
+
+        // dd($file_name);
+        /*Upload Files*/
+
+        $req->file('foto')->move(public_path('uploaded/siswa'), $file_name);
+
         $id_role = Role::where('name','siswa')->first()->id_role;
 
         $user = new User();
@@ -102,6 +119,7 @@ class LandingController extends Controller
         $calonsiswa->pkrj_ortu = $req->pkrj_ortu;
         $calonsiswa->gaji_ortu = $req->gaji_ortu;
         $calonsiswa->sklh_asal = $req->sklh_asal;
+        $calonsiswa->foto = $file_name;
         $calonsiswa->save();
 
         $steps = new Step();
